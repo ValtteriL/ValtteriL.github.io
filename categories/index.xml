@@ -6,6 +6,16 @@
     <description>Recent content in Categories on Shuffling Bytes | Valtteri Lehtinen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; Copyright 2021, Valtteri Lehtinen</copyright><atom:link href="https://shufflingbytes.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; Copyright 2021, Valtteri Lehtinen</copyright>
+    <lastBuildDate>Sat, 17 Apr 2021 18:58:44 +0300</lastBuildDate><atom:link href="https://shufflingbytes.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Research</title>
+      <link>https://shufflingbytes.com/categories/research/</link>
+      <pubDate>Sat, 17 Apr 2021 18:58:44 +0300</pubDate>
+      
+      <guid>https://shufflingbytes.com/categories/research/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

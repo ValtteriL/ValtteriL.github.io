@@ -3,20 +3,58 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://shufflingbytes.com/about/</loc>
-    <lastmod>2021-01-21T17:14:36+02:00</lastmod>
+    <loc>https://shufflingbytes.com/categories/</loc>
+    <lastmod>2021-04-17T18:58:44+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://shufflingbytes.com/categories/</loc>
+    <loc>https://shufflingbytes.com/tags/honeypot/</loc>
+    <lastmod>2021-04-17T18:58:44+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shufflingbytes.com/posts/</loc>
+    <lastmod>2021-04-17T18:58:44+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shufflingbytes.com/categories/research/</loc>
+    <lastmod>2021-04-17T18:58:44+03:00</lastmod>
   </url>
   
   <url>
     <loc>https://shufflingbytes.com/</loc>
+    <lastmod>2021-04-17T18:58:44+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shufflingbytes.com/tags/sip/</loc>
+    <lastmod>2021-04-17T18:58:44+03:00</lastmod>
   </url>
   
   <url>
     <loc>https://shufflingbytes.com/tags/</loc>
+    <lastmod>2021-04-17T18:58:44+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shufflingbytes.com/tags/telephony/</loc>
+    <lastmod>2021-04-17T18:58:44+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shufflingbytes.com/tags/voip/</loc>
+    <lastmod>2021-04-17T18:58:44+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shufflingbytes.com/posts/sip-honeypot/</loc>
+    <lastmod>2021-04-17T18:58:44+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shufflingbytes.com/about/</loc>
+    <lastmod>2021-01-21T17:14:36+02:00</lastmod>
   </url>
   
 </urlset>
