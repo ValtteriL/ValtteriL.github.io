@@ -7,20 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2021, Valtteri Lehtinen</copyright>
-    <lastBuildDate>Sat, 17 Apr 2021 18:58:44 +0300</lastBuildDate><atom:link href="https://shufflingbytes.com/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>honeypot</title>
-      <link>https://shufflingbytes.com/tags/honeypot/</link>
-      <pubDate>Sat, 17 Apr 2021 18:58:44 +0300</pubDate>
-      
-      <guid>https://shufflingbytes.com/tags/honeypot/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Wed, 23 Jun 2021 11:06:16 +0300</lastBuildDate><atom:link href="https://shufflingbytes.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SIP</title>
       <link>https://shufflingbytes.com/tags/sip/</link>
-      <pubDate>Sat, 17 Apr 2021 18:58:44 +0300</pubDate>
+      <pubDate>Wed, 23 Jun 2021 11:06:16 +0300</pubDate>
       
       <guid>https://shufflingbytes.com/tags/sip/</guid>
       <description></description>
@@ -29,7 +20,7 @@
     <item>
       <title>telephony</title>
       <link>https://shufflingbytes.com/tags/telephony/</link>
-      <pubDate>Sat, 17 Apr 2021 18:58:44 +0300</pubDate>
+      <pubDate>Wed, 23 Jun 2021 11:06:16 +0300</pubDate>
       
       <guid>https://shufflingbytes.com/tags/telephony/</guid>
       <description></description>
@@ -38,9 +29,27 @@
     <item>
       <title>VOIP</title>
       <link>https://shufflingbytes.com/tags/voip/</link>
-      <pubDate>Sat, 17 Apr 2021 18:58:44 +0300</pubDate>
+      <pubDate>Wed, 23 Jun 2021 11:06:16 +0300</pubDate>
       
       <guid>https://shufflingbytes.com/tags/voip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wardialing</title>
+      <link>https://shufflingbytes.com/tags/wardialing/</link>
+      <pubDate>Wed, 23 Jun 2021 11:06:16 +0300</pubDate>
+      
+      <guid>https://shufflingbytes.com/tags/wardialing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>honeypot</title>
+      <link>https://shufflingbytes.com/tags/honeypot/</link>
+      <pubDate>Sat, 17 Apr 2021 18:58:44 +0300</pubDate>
+      
+      <guid>https://shufflingbytes.com/tags/honeypot/</guid>
       <description></description>
     </item>
     

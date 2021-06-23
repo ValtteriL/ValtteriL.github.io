@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2021, Valtteri Lehtinen</copyright>
-    <lastBuildDate>Sat, 17 Apr 2021 18:58:44 +0300</lastBuildDate><atom:link href="https://shufflingbytes.com/tags/telephony/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Jun 2021 11:06:16 +0300</lastBuildDate><atom:link href="https://shufflingbytes.com/tags/telephony/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>I made 56874 calls to explore the telephone network. Here&#39;s what I found</title>
+      <link>https://shufflingbytes.com/posts/wardialing-finnish-freephones/</link>
+      <pubDate>Wed, 23 Jun 2021 11:06:16 +0300</pubDate>
+      
+      <guid>https://shufflingbytes.com/posts/wardialing-finnish-freephones/</guid>
+      <description>I made 56874 calls to explore the telephone network. Here&amp;rsquo;s what I found.  What kind of systems are there in the Finnish telephone network today?
+ This question appeared to me a while ago when leafing through an old telephone directory from the early 2000s.
+There are at least ordinary subscribers, business customer support lines, voice mails, and fax machines. Subscribers and customer support lines are not of special interest to me.</description>
+    </item>
+    
     <item>
       <title>What I learned of the VOIP hacker scene by setting up a SIP Honeypot</title>
       <link>https://shufflingbytes.com/posts/sip-honeypot/</link>
