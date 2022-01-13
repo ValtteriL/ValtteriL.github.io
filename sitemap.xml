@@ -3,17 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://shufflingbytes.com/posts/zone-trasfer-experiment/</loc>
-    <lastmod>2022-01-13T16:16:31+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://shufflingbytes.com/categories/</loc>
     <lastmod>2022-01-13T16:16:31+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://shufflingbytes.com/tags/dns/</loc>
+    <lastmod>2022-01-13T16:16:31+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shufflingbytes.com/posts/zone-trasfer-experiment/</loc>
     <lastmod>2022-01-13T16:16:31+02:00</lastmod>
   </url>
   
