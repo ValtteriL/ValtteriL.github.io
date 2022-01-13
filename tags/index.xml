@@ -7,7 +7,43 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2021, Valtteri Lehtinen</copyright>
-    <lastBuildDate>Wed, 23 Jun 2021 11:06:16 +0300</lastBuildDate><atom:link href="https://shufflingbytes.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Jan 2022 16:16:31 +0200</lastBuildDate><atom:link href="https://shufflingbytes.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>dns</title>
+      <link>https://shufflingbytes.com/tags/dns/</link>
+      <pubDate>Thu, 13 Jan 2022 16:16:31 +0200</pubDate>
+      
+      <guid>https://shufflingbytes.com/tags/dns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>finnish</title>
+      <link>https://shufflingbytes.com/tags/finnish/</link>
+      <pubDate>Thu, 13 Jan 2022 16:16:31 +0200</pubDate>
+      
+      <guid>https://shufflingbytes.com/tags/finnish/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>misconfiguration</title>
+      <link>https://shufflingbytes.com/tags/misconfiguration/</link>
+      <pubDate>Thu, 13 Jan 2022 16:16:31 +0200</pubDate>
+      
+      <guid>https://shufflingbytes.com/tags/misconfiguration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>recon</title>
+      <link>https://shufflingbytes.com/tags/recon/</link>
+      <pubDate>Thu, 13 Jan 2022 16:16:31 +0200</pubDate>
+      
+      <guid>https://shufflingbytes.com/tags/recon/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>SIP</title>
       <link>https://shufflingbytes.com/tags/sip/</link>

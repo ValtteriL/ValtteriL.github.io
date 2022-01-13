@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>misconfiguration on Shuffling Bytes | Valtteri Lehtinen</title>
+    <link>https://shufflingbytes.com/tags/misconfiguration/</link>
+    <description>Recent content in misconfiguration on Shuffling Bytes | Valtteri Lehtinen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; Copyright 2021, Valtteri Lehtinen</copyright>
+    <lastBuildDate>Thu, 13 Jan 2022 16:16:31 +0200</lastBuildDate><atom:link href="https://shufflingbytes.com/tags/misconfiguration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1% of .fi domains exposed through DNS Zone Transfers</title>
+      <link>https://shufflingbytes.com/posts/zone-trasfer-experiment/</link>
+      <pubDate>Thu, 13 Jan 2022 16:16:31 +0200</pubDate>
+      
+      <guid>https://shufflingbytes.com/posts/zone-trasfer-experiment/</guid>
+      <description>1% of .fi domains exposed through DNS Zone Transfers DNS Zone Transfer is a mechanism for administrators to replicate DNS datasets across DNS servers. If it is enabled for a DNS nameserver, the nameserver will gladly give all DNS data regarding a domain to anyone who asks. Enabling Zone Transfers will cause an information disclosure and can thus be considered misconfiguration.
+I decided to investigate how common this nameserver misconfiguration is by doing a zone transfer query on all .</description>
+    </item>
+    
+  </channel>
+</rss>
