@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head>
-    <title>DNS records of 1% .fi domains exposed through DNS Zone Transfers</title>
+    <title>DNS records of 1% .fi domains exposed through Zone Transfers</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Post describing my experiment of finding out how commonly nameservers are misconfigured to allow zone transfers" />
@@ -91,7 +91,7 @@
 </header>
 <div class="container">
     <div class="pl-sm-4 ml-sm-5">
-        <h1 id="dns-records-of-1-fi-domains-exposed-through-dns-zone-transfers">DNS records of 1% .fi domains exposed through DNS Zone Transfers</h1>
+        <h1 id="dns-records-of-1-fi-domains-exposed-through-zone-transfers">DNS records of 1% .fi domains exposed through Zone Transfers</h1>
 <p>DNS Zone Transfer is a mechanism for administrators to replicate DNS datasets across DNS servers. If it is enabled for a DNS nameserver, the nameserver will gladly give all DNS data regarding a domain to anyone who asks. Enabling Zone Transfers will cause an information disclosure and can thus be considered misconfiguration.</p>
 <p>I decided to investigate how common this nameserver misconfiguration is by doing a zone transfer query on all .fi domains I know of (in total 330k domains). This post describes the experiment.</p>
 <h2 id="effortless-reconnaissance-tool-for-hackers">Effortless reconnaissance tool for hackers</h2>
