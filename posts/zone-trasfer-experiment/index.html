@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en"><head>
+    <title>1% of .fi domains exposed through DNS Zone Transfers</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="" />
+
+    
+    
+    
+    <link rel="stylesheet" href="../../css/theme.min.css">
+
+    
+    
+    
+
+    
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7c7cfec507c6445db41e4d76c2c7d262"}'></script>
+</head>
+<body>
+        <div id="content" class="mx-auto"><header class="container mt-sm-5 mt-4 mb-4 mt-xs-1">
+    <div class="row">
+        <div class="col-sm-4 col-12 text-sm-right text-center pt-sm-4">
+            <a href="../../" class="text-decoration-none">
+                <img id="home-image" class="rounded-circle"
+                    
+                        
+                            src="../../images/avatar.png"
+                        
+                    
+                />
+            </a>
+        </div>
+        <div class="col-sm-8 col-12 text-sm-left text-center">
+            <h2 class="m-0 mb-2 mt-4">
+                <a href="../../" class="text-decoration-none">
+                    
+                        Valtteri Lehtinen
+                    
+                </a>
+            </h2>
+            <p class="text-muted mb-1">
+                
+                    Security Research &amp; Curiosities | Helsinki, Finland
+                
+            </p>
+            <ul id="nav-links" class="list-inline mb-2">
+                
+                
+                    <li class="list-inline-item">
+                        <a class="badge badge-white " href="../../about" title="About">About (hire me)</a>
+                    </li>
+                
+                    <li class="list-inline-item">
+                        <a class="badge badge-white " href="../../posts/" title="Posts">Posts</a>
+                    </li>
+                
+                    <li class="list-inline-item">
+                        <a class="badge badge-white " href="../../categories/" title="Categories">Categories</a>
+                    </li>
+                
+                    <li class="list-inline-item">
+                        <a class="badge badge-white " href="../../posts/index.xml" title="RSS">RSS</a>
+                    </li>
+                
+            </ul>
+            <ul id="nav-social" class="list-inline">
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="https://github.com/ValtteriL" target="_blank">
+                            <i class="fab fa-github fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="https://www.linkedin.com/in/valtterilehtinen/" target="_blank">
+                            <i class="fab fa-linkedin-in fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="mailto:valtteri@shufflingbytes.com" target="_blank">
+                            <i class="fas fa-at fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+    <hr />
+</header>
+<div class="container">
+    <div class="pl-sm-4 ml-sm-5">
+        <h1 id="1-of-fi-domains-exposed-through-dns-zone-transfers">1% of .fi domains exposed through DNS Zone Transfers</h1>
+<p>DNS Zone Transfer is a mechanism for administrators to replicate DNS datasets across DNS servers. If it is enabled for a DNS nameserver, the nameserver will gladly give all DNS data regarding a domain to anyone who asks. Enabling Zone Transfers will cause an information disclosure and can thus be considered misconfiguration.</p>
+<p>I decided to investigate how common this nameserver misconfiguration is by doing a zone transfer query on all .fi domains I know of (in total 330k domains). This post describes the experiment.</p>
+<h2 id="effortless-reconnaissance-tool-for-hackers">Effortless reconnaissance tool for hackers</h2>
+<p>When a systematic hacker targets an organization, one of the first things they do is footprinting. Footprinting consists of gathering information about the target organization that can later be used to prepare effective attacks against it. One piece of such useful information is a list of subdomains.</p>
+<p>The list of the target&rsquo;s subdomains can be brute-forced or they can be amassed from public sources, such as certificate transparency logs. These techniques are effective, but they require time and effort, and the attacker cannot be sure whether they have gathered all of the subdomains. Without a full list, the attacker may miss exploitable vulnerabilities in the organization.</p>
+<p>There is a less known and less involved method of piecing together an exhaustive list - DNS Zone Transfer. In addition to leaking all the subdomains, it will reveal all other information in DNS records that might be useful for attackers.</p>
+<h2 id="9-of-nameservers-misconfigured">9% of nameservers misconfigured</h2>
+<p>The experiment was done by sending an AXFR query to every nameserver of 330k .fi domains.</p>
+<p>The results are as follows:</p>
+<figure>
+    <img src="../../images/dns-zonetransfer-results.png"
+         alt="DNS Zone Transfer results"/> 
+</figure>
+
+<p>335211 .fi domains used in total 20204 nameservers. Out of these nameservers, 1905 (9%) was misconfigured, and that resulted in the exposure of 4792 (1%) .fi domains.</p>
+<p>Many domains use the same nameservers. Misconfiguration in a single shared nameserver will therefore result in multiple .fi domains being exposed.</p>
+<p>In the light of these results and the minimal effort required to do it, Zone Transfer is a useful footprinting method for hackers.</p>
+<h2 id="how-to-check-if-your-organization-is-exposed">How to check if your organization is exposed</h2>
+<p>You can check whether your organization&rsquo;s domain is exposed using the following command (requires dig):</p>
+<pre><code>DOMAIN=&lt;your domain&gt; &amp;&amp; for i in `dig +short NS $DOMAIN`; do dig axfr @&quot;$i&quot; &quot;$DOMAIN&quot;; done
+</code></pre><p>Output when the domain is not exposed is as follows:</p>
+<pre><code>DOMAIN=molemmat.fi &amp;&amp; for i in `dig +short NS $DOMAIN`; do dig axfr @&quot;$i&quot; &quot;$DOMAIN&quot;; done
+
+; &lt;&lt;&gt;&gt; DiG 9.16.1-Ubuntu &lt;&lt;&gt;&gt; axfr @ns1.domainhotelli.fi. molemmat.fi
+; (1 server found)
+;; global options: +cmd
+; Transfer failed.
+
+; &lt;&lt;&gt;&gt; DiG 9.16.1-Ubuntu &lt;&lt;&gt;&gt; axfr @ns2.domainhotelli.fi. molemmat.fi
+; (1 server found)
+;; global options: +cmd
+; Transfer failed.
+
+</code></pre><p>If you see an output with a dump of DNS records, such as in the following output, the domain is exposed.</p>
+<pre><code>DOMAIN=zonetransfer.me &amp;&amp; for i in `dig +short NS $DOMAIN`; do dig axfr @&quot;$i&quot; &quot;$DOMAIN&quot;; done
+
+; &lt;&lt;&gt;&gt; DiG 9.16.1-Ubuntu &lt;&lt;&gt;&gt; axfr @nsztm1.digi.ninja. zonetransfer.me
+; (1 server found)
+;; global options: +cmd
+zonetransfer.me.        7200    IN      SOA     nsztm1.digi.ninja. robin.digi.ninja. 2019100801 172800 900 1209600 3600
+zonetransfer.me.        300     IN      HINFO   &quot;Casio fx-700G&quot; &quot;Windows XP&quot;
+zonetransfer.me.        301     IN      TXT     &quot;google-site-verification=tyP28J7JAUHA9fw2sHXMgcCC0I6XBmmoVi04VlMewxA&quot;
+zonetransfer.me.        7200    IN      MX      0 ASPMX.L.GOOGLE.COM.
+zonetransfer.me.        7200    IN      MX      10 ALT1.ASPMX.L.GOOGLE.COM.
+zonetransfer.me.        7200    IN      MX      10 ALT2.ASPMX.L.GOOGLE.COM.
+zonetransfer.me.        7200    IN      MX      20 ASPMX2.GOOGLEMAIL.COM.
+zonetransfer.me.        7200    IN      MX      20 ASPMX3.GOOGLEMAIL.COM.
+zonetransfer.me.        7200    IN      MX      20 ASPMX4.GOOGLEMAIL.COM.
+zonetransfer.me.        7200    IN      MX      20 ASPMX5.GOOGLEMAIL.COM.
+zonetransfer.me.        7200    IN      A       5.196.105.14
+....
+
+</code></pre><h2 id="exposed-heres-how-to-protect-yourself">Exposed? Here&rsquo;s how to protect yourself</h2>
+<p>If your domain is exposed, the misconfiguration exists on your nameserver(s). If you manage them yourself, go ahead and disable Zone Transfer functionality for all of them.</p>
+<p>If your nameservers are managed by a third party, ask them to disable it for you.</p>
+<p>If for some reason the mechanism is required, only allow AXFR queries from the hosts that need it.</p>
+<h2 id="hire-me-to-test-your-organizations-security">Hire me to test your organization&rsquo;s security</h2>
+<p>I recently started doing security testing gigs for businesses. From me, you get personal service from start to finish. With the resulting report you know where the weaknesses are so you can fix them, or if your system&rsquo;s security is already mature, you can use the report to prove its security to your clients.</p>
+<p>Contact me for details.</p>
+
+    </div>
+
+            </div>
+        </div><footer class="text-center pb-1">
+    <small class="text-muted">
+        
+            &copy; Copyright 2021, Valtteri Lehtinen
+        
+        <br>
+        Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>
+        and <a href="https://github.com/austingebauer/devise" target="_blank">Devise</a>
+    </small>
+</footer>
+</body>
+</html>
