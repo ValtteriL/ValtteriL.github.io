@@ -6,8 +6,17 @@
     <description>Recent content in SIP on Shuffling Bytes | Valtteri Lehtinen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; Copyright 2021, Valtteri Lehtinen</copyright>
-    <lastBuildDate>Wed, 23 Jun 2021 11:06:16 +0300</lastBuildDate><atom:link href="https://shufflingbytes.com/tags/sip/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; Copyright 2022, Valtteri Lehtinen</copyright>
+    <lastBuildDate>Tue, 15 Feb 2022 20:25:20 +0200</lastBuildDate><atom:link href="https://shufflingbytes.com/tags/sip/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GoIP-1 GSM gateway could be harnessed for phone fraud by hackers</title>
+      <link>https://shufflingbytes.com/posts/hacking-goip-gsm-gateway/</link>
+      <pubDate>Tue, 15 Feb 2022 20:25:20 +0200</pubDate>
+      
+      <guid>https://shufflingbytes.com/posts/hacking-goip-gsm-gateway/</guid>
+      <description>GoIP-1 GSM gateway could be harnessed for phone fraud by hackers While listening to Risky Business ep. 642, I learned about a botnet that has been abusing a vulnerability in TP-Link routers to provide SMS messaging as a service for years. The exploited vulnerability allowed the botnet operator to send SMS messages on someone else&amp;rsquo;s bill and the operator sold this capability for others, including other criminals. Similar services are no doubt used when you receive smishing messages notifying you about false packages stuck in customs.</description>
+    </item>
+    
     <item>
       <title>I made 56874 calls to explore the telephone network. Here&#39;s what I found</title>
       <link>https://shufflingbytes.com/posts/wardialing-finnish-freephones/</link>

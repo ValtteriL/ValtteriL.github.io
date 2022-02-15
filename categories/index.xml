@@ -6,8 +6,17 @@
     <description>Recent content in Categories on Shuffling Bytes | Valtteri Lehtinen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; Copyright 2021, Valtteri Lehtinen</copyright>
-    <lastBuildDate>Thu, 13 Jan 2022 16:16:31 +0200</lastBuildDate><atom:link href="https://shufflingbytes.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; Copyright 2022, Valtteri Lehtinen</copyright>
+    <lastBuildDate>Tue, 15 Feb 2022 20:25:20 +0200</lastBuildDate><atom:link href="https://shufflingbytes.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Security assessment</title>
+      <link>https://shufflingbytes.com/categories/security-assessment/</link>
+      <pubDate>Tue, 15 Feb 2022 20:25:20 +0200</pubDate>
+      
+      <guid>https://shufflingbytes.com/categories/security-assessment/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Research</title>
       <link>https://shufflingbytes.com/categories/research/</link>

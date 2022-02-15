@@ -4,7 +4,47 @@
   
   <url>
     <loc>https://shufflingbytes.com/categories/</loc>
-    <lastmod>2022-01-13T16:16:31+02:00</lastmod>
+    <lastmod>2022-02-15T20:25:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shufflingbytes.com/posts/hacking-goip-gsm-gateway/</loc>
+    <lastmod>2022-02-15T20:25:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shufflingbytes.com/posts/</loc>
+    <lastmod>2022-02-15T20:25:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shufflingbytes.com/categories/security-assessment/</loc>
+    <lastmod>2022-02-15T20:25:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shufflingbytes.com/</loc>
+    <lastmod>2022-02-15T20:25:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shufflingbytes.com/tags/sip/</loc>
+    <lastmod>2022-02-15T20:25:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shufflingbytes.com/tags/</loc>
+    <lastmod>2022-02-15T20:25:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shufflingbytes.com/tags/telephony/</loc>
+    <lastmod>2022-02-15T20:25:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shufflingbytes.com/tags/voip/</loc>
+    <lastmod>2022-02-15T20:25:20+02:00</lastmod>
   </url>
   
   <url>
@@ -28,11 +68,6 @@
   </url>
   
   <url>
-    <loc>https://shufflingbytes.com/posts/</loc>
-    <lastmod>2022-01-13T16:16:31+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://shufflingbytes.com/tags/recon/</loc>
     <lastmod>2022-01-13T16:16:31+02:00</lastmod>
   </url>
@@ -43,32 +78,7 @@
   </url>
   
   <url>
-    <loc>https://shufflingbytes.com/</loc>
-    <lastmod>2022-01-13T16:16:31+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://shufflingbytes.com/tags/</loc>
-    <lastmod>2022-01-13T16:16:31+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://shufflingbytes.com/posts/wardialing-finnish-freephones/</loc>
-    <lastmod>2021-06-23T11:06:16+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://shufflingbytes.com/tags/sip/</loc>
-    <lastmod>2021-06-23T11:06:16+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://shufflingbytes.com/tags/telephony/</loc>
-    <lastmod>2021-06-23T11:06:16+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://shufflingbytes.com/tags/voip/</loc>
     <lastmod>2021-06-23T11:06:16+03:00</lastmod>
   </url>
   
@@ -89,7 +99,7 @@
   
   <url>
     <loc>https://shufflingbytes.com/about/</loc>
-    <lastmod>2021-01-21T17:14:36+02:00</lastmod>
+    <lastmod>2021-02-15T17:14:36+02:00</lastmod>
   </url>
   
 </urlset>

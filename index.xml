@@ -6,8 +6,17 @@
     <description>Recent content on Shuffling Bytes | Valtteri Lehtinen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; Copyright 2021, Valtteri Lehtinen</copyright>
-    <lastBuildDate>Thu, 13 Jan 2022 16:16:31 +0200</lastBuildDate><atom:link href="https://shufflingbytes.com/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; Copyright 2022, Valtteri Lehtinen</copyright>
+    <lastBuildDate>Tue, 15 Feb 2022 20:25:20 +0200</lastBuildDate><atom:link href="https://shufflingbytes.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GoIP-1 GSM gateway could be harnessed for phone fraud by hackers</title>
+      <link>https://shufflingbytes.com/posts/hacking-goip-gsm-gateway/</link>
+      <pubDate>Tue, 15 Feb 2022 20:25:20 +0200</pubDate>
+      
+      <guid>https://shufflingbytes.com/posts/hacking-goip-gsm-gateway/</guid>
+      <description>GoIP-1 GSM gateway could be harnessed for phone fraud by hackers While listening to Risky Business ep. 642, I learned about a botnet that has been abusing a vulnerability in TP-Link routers to provide SMS messaging as a service for years. The exploited vulnerability allowed the botnet operator to send SMS messages on someone else&amp;rsquo;s bill and the operator sold this capability for others, including other criminals. Similar services are no doubt used when you receive smishing messages notifying you about false packages stuck in customs.</description>
+    </item>
+    
     <item>
       <title>DNS records of 1% .fi domains exposed through Zone Transfers</title>
       <link>https://shufflingbytes.com/posts/zone-trasfer-experiment/</link>
@@ -41,11 +50,13 @@ There are at least ordinary subscribers, business customer support lines, voice 
     <item>
       <title>About</title>
       <link>https://shufflingbytes.com/about/</link>
-      <pubDate>Thu, 21 Jan 2021 17:14:36 +0200</pubDate>
+      <pubDate>Mon, 15 Feb 2021 17:14:36 +0200</pubDate>
       
       <guid>https://shufflingbytes.com/about/</guid>
       <description>Me Hi! My name is Valtteri. I am a security researcher from Helsinki, Finland.
-I do security testing gigs for businesses. From me, you get personal service from start to finish. With the resulting report you know where the weaknesses are so you can fix them, or if your system’s security is already mature, you can use the report to prove its security to your clients. Please get in touch to get started.</description>
+I do security testing gigs for businesses through my company Molemmat Oy. Get in touch to get started!
+This blog In this blog I publish my research and curiosities around (computer) security.
+Contact valtteri@shufflingbytes.com</description>
     </item>
     
   </channel>

@@ -6,8 +6,35 @@
     <description>Recent content in Tags on Shuffling Bytes | Valtteri Lehtinen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; Copyright 2021, Valtteri Lehtinen</copyright>
-    <lastBuildDate>Thu, 13 Jan 2022 16:16:31 +0200</lastBuildDate><atom:link href="https://shufflingbytes.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; Copyright 2022, Valtteri Lehtinen</copyright>
+    <lastBuildDate>Tue, 15 Feb 2022 20:25:20 +0200</lastBuildDate><atom:link href="https://shufflingbytes.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SIP</title>
+      <link>https://shufflingbytes.com/tags/sip/</link>
+      <pubDate>Tue, 15 Feb 2022 20:25:20 +0200</pubDate>
+      
+      <guid>https://shufflingbytes.com/tags/sip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>telephony</title>
+      <link>https://shufflingbytes.com/tags/telephony/</link>
+      <pubDate>Tue, 15 Feb 2022 20:25:20 +0200</pubDate>
+      
+      <guid>https://shufflingbytes.com/tags/telephony/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VOIP</title>
+      <link>https://shufflingbytes.com/tags/voip/</link>
+      <pubDate>Tue, 15 Feb 2022 20:25:20 +0200</pubDate>
+      
+      <guid>https://shufflingbytes.com/tags/voip/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>dns</title>
       <link>https://shufflingbytes.com/tags/dns/</link>
@@ -41,33 +68,6 @@
       <pubDate>Thu, 13 Jan 2022 16:16:31 +0200</pubDate>
       
       <guid>https://shufflingbytes.com/tags/recon/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SIP</title>
-      <link>https://shufflingbytes.com/tags/sip/</link>
-      <pubDate>Wed, 23 Jun 2021 11:06:16 +0300</pubDate>
-      
-      <guid>https://shufflingbytes.com/tags/sip/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>telephony</title>
-      <link>https://shufflingbytes.com/tags/telephony/</link>
-      <pubDate>Wed, 23 Jun 2021 11:06:16 +0300</pubDate>
-      
-      <guid>https://shufflingbytes.com/tags/telephony/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>VOIP</title>
-      <link>https://shufflingbytes.com/tags/voip/</link>
-      <pubDate>Wed, 23 Jun 2021 11:06:16 +0300</pubDate>
-      
-      <guid>https://shufflingbytes.com/tags/voip/</guid>
       <description></description>
     </item>
     
