@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2022, Valtteri Lehtinen</copyright>
-    <lastBuildDate>Thu, 13 Jan 2022 16:16:31 +0200</lastBuildDate><atom:link href="https://shufflingbytes.com/categories/research/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 May 2022 19:46:53 +0300</lastBuildDate><atom:link href="https://shufflingbytes.com/categories/research/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UPnProxyChain: a Tool to Exploit Devices Vulnerable to UPnProxy</title>
+      <link>https://shufflingbytes.com/posts/upnproxychain-a-tool-to-exploit-devices-vulnerable-to-upnproxy/</link>
+      <pubDate>Mon, 30 May 2022 19:46:53 +0300</pubDate>
+      
+      <guid>https://shufflingbytes.com/posts/upnproxychain-a-tool-to-exploit-devices-vulnerable-to-upnproxy/</guid>
+      <description>UPnProxyChain: a Tool to Exploit Devices Vulnerable to UPnProxy Remember UPnProxy?
+Flawed implementations of UPnP allow external attackers to use vulnerable devices as proxies without any authentication. Such devices are vulnerable to UPnProxy. Various malicious actors have been using this vulnerability to commit crimes.
+During penetration tests, I have multiple times encountered such vulnerable devices on the public IP address space of the clients. No suitable tooling exists to exploit such devices, so I decided to create some.</description>
+    </item>
+    
     <item>
       <title>DNS records of 1% .fi domains exposed through Zone Transfers</title>
       <link>https://shufflingbytes.com/posts/zone-trasfer-experiment/</link>
