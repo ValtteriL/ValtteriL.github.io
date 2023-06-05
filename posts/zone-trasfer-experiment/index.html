@@ -101,9 +101,8 @@
 <h2 id="9-of-nameservers-misconfigured">9% of nameservers misconfigured</h2>
 <p>The experiment was done by sending an AXFR query to every nameserver of 330k .fi domains.</p>
 <p>The results are as follows:</p>
-<figure>
-    <img src="../../images/dns-zonetransfer-results.png"
-         alt="DNS Zone Transfer results"/> 
+<figure><img src="../../images/dns-zonetransfer-results.png"
+         alt="DNS Zone Transfer results"/>
 </figure>
 
 <p>335211 .fi domains used in total 20204 nameservers. Out of these nameservers, 1905 (9%) was misconfigured, and that resulted in the exposure of 4792 (1%) .fi domains.</p>
@@ -111,9 +110,9 @@
 <p>In the light of these results and the minimal effort required to do it, Zone Transfer is a useful footprinting method for hackers.</p>
 <h2 id="how-to-check-if-your-organization-is-exposed">How to check if your organization is exposed</h2>
 <p>You can check whether your organization&rsquo;s domain is exposed using the following command (requires dig):</p>
-<pre><code>DOMAIN=&lt;your domain&gt; &amp;&amp; for i in `dig +short NS $DOMAIN`; do dig axfr @&quot;$i&quot; &quot;$DOMAIN&quot;; done
+<pre tabindex="0"><code>DOMAIN=&lt;your domain&gt; &amp;&amp; for i in `dig +short NS $DOMAIN`; do dig axfr @&quot;$i&quot; &quot;$DOMAIN&quot;; done
 </code></pre><p>Output when the domain is not exposed is as follows:</p>
-<pre><code>DOMAIN=molemmat.fi &amp;&amp; for i in `dig +short NS $DOMAIN`; do dig axfr @&quot;$i&quot; &quot;$DOMAIN&quot;; done
+<pre tabindex="0"><code>DOMAIN=molemmat.fi &amp;&amp; for i in `dig +short NS $DOMAIN`; do dig axfr @&quot;$i&quot; &quot;$DOMAIN&quot;; done
 
 ; &lt;&lt;&gt;&gt; DiG 9.16.1-Ubuntu &lt;&lt;&gt;&gt; axfr @ns1.domainhotelli.fi. molemmat.fi
 ; (1 server found)
@@ -126,7 +125,7 @@
 ; Transfer failed.
 
 </code></pre><p>If you see an output with a dump of DNS records, such as in the following output, the domain is exposed.</p>
-<pre><code>DOMAIN=zonetransfer.me &amp;&amp; for i in `dig +short NS $DOMAIN`; do dig axfr @&quot;$i&quot; &quot;$DOMAIN&quot;; done
+<pre tabindex="0"><code>DOMAIN=zonetransfer.me &amp;&amp; for i in `dig +short NS $DOMAIN`; do dig axfr @&quot;$i&quot; &quot;$DOMAIN&quot;; done
 
 ; &lt;&lt;&gt;&gt; DiG 9.16.1-Ubuntu &lt;&lt;&gt;&gt; axfr @nsztm1.digi.ninja. zonetransfer.me
 ; (1 server found)
@@ -158,7 +157,7 @@ zonetransfer.me.        7200    IN      A       5.196.105.14
         </div><footer class="text-center pb-1">
     <small class="text-muted">
         
-            &copy; Copyright 2022, Valtteri Lehtinen
+            &copy; Copyright 2023, Valtteri Lehtinen
         
         <br>
         Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>

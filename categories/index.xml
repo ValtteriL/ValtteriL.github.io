@@ -6,14 +6,23 @@
     <description>Recent content in Categories on Shuffling Bytes | Valtteri Lehtinen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; Copyright 2022, Valtteri Lehtinen</copyright>
-    <lastBuildDate>Mon, 30 May 2022 19:46:53 +0300</lastBuildDate><atom:link href="https://shufflingbytes.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; Copyright 2023, Valtteri Lehtinen</copyright>
+    <lastBuildDate>Mon, 05 Jun 2023 18:58:10 +0300</lastBuildDate><atom:link href="https://shufflingbytes.com/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Research</title>
       <link>https://shufflingbytes.com/categories/research/</link>
-      <pubDate>Mon, 30 May 2022 19:46:53 +0300</pubDate>
+      <pubDate>Mon, 05 Jun 2023 18:58:10 +0300</pubDate>
       
       <guid>https://shufflingbytes.com/categories/research/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tor</title>
+      <link>https://shufflingbytes.com/categories/tor/</link>
+      <pubDate>Mon, 05 Jun 2023 18:58:10 +0300</pubDate>
+      
+      <guid>https://shufflingbytes.com/categories/tor/</guid>
       <description></description>
     </item>
     

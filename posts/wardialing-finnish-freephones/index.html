@@ -157,9 +157,8 @@ On the IP network, they provide an interface, such as SIP, which can be used to 
 WarVOX speaks IAX2, not SIP, so I had to configure Asterisk as a proxy between the two protocols.</p>
 <p>To connect to the PSTN network, I bought the cheapest prepaid SIM with a 5 EUR credit.
 If the service provider does not like my actions, they can simply block this SIM card.</p>
-<figure>
-    <img src="../../images/topology.png"
-         alt="Wardialing setup topology diagram"/> <figcaption>
+<figure><img src="../../images/topology.png"
+         alt="Wardialing setup topology diagram"/><figcaption>
             <p>VoIP GSM Gateway and Asterisk let WarVOX control calls to the telephone network</p>
         </figcaption>
 </figure>
@@ -194,9 +193,8 @@ For 56874 calls, this means roughly 40 days calling day and night.</p>
 <p>The time required to connect the call and the time it takes for someone to pick up is deducted from the 60 seconds.
 This means that the recordings are all shorter than 60 seconds.</p>
 <p>I configured the VoIP GSM Gateway to not send Caller ID, so fewer people would pick up and nobody would call me back.</p>
-<figure>
-    <img src="../../images/gsm-voip-gateway.png"
-         alt="GSM VoIP gateway making calls"/> <figcaption>
+<figure><img src="../../images/gsm-voip-gateway.png"
+         alt="GSM VoIP gateway making calls"/><figcaption>
             <p>VoIP GSM Gateway relaying one of the 56874 calls</p>
         </figcaption>
 </figure>
@@ -208,9 +206,8 @@ The signal graphs can be used to sort the recordings by similarity, but I found 
 <p>To avoid listening to all recordings myself, used Google Cloud Speech-to-Text to transcribe the recordings, and then used the transcriptions to aside the call recordings that have the same message.
 This reduced the number of calls to listen manually to around 300, a bearable number.</p>
 <p>I then manually listened to the different recordings and classified them according to the following diagram:</p>
-<figure>
-    <img src="../../images/sorting.png"
-         alt="Call sorting diagram"/> <figcaption>
+<figure><img src="../../images/sorting.png"
+         alt="Call sorting diagram"/><figcaption>
             <p>Calls were sorted according to this diagram</p>
         </figcaption>
 </figure>
@@ -474,7 +471,7 @@ However, this range may contain service numbers that charge premium rates.</p>
         </div><footer class="text-center pb-1">
     <small class="text-muted">
         
-            &copy; Copyright 2022, Valtteri Lehtinen
+            &copy; Copyright 2023, Valtteri Lehtinen
         
         <br>
         Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>

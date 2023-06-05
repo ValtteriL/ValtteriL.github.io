@@ -6,8 +6,19 @@
     <description>Recent content in Research on Shuffling Bytes | Valtteri Lehtinen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; Copyright 2022, Valtteri Lehtinen</copyright>
-    <lastBuildDate>Mon, 30 May 2022 19:46:53 +0300</lastBuildDate><atom:link href="https://shufflingbytes.com/categories/research/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; Copyright 2023, Valtteri Lehtinen</copyright>
+    <lastBuildDate>Mon, 05 Jun 2023 18:58:10 +0300</lastBuildDate><atom:link href="https://shufflingbytes.com/categories/research/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ripping Off Professional Criminals by Fermenting Onions - Phishing Darknet Users for Bitcoins</title>
+      <link>https://shufflingbytes.com/posts/ripping-off-professional-criminals-by-fermenting-onions-phishing-darknet-users-for-bitcoins/</link>
+      <pubDate>Mon, 05 Jun 2023 18:58:10 +0300</pubDate>
+      
+      <guid>https://shufflingbytes.com/posts/ripping-off-professional-criminals-by-fermenting-onions-phishing-darknet-users-for-bitcoins/</guid>
+      <description>Ripping Off Professional Criminals by Fermenting Onions - Phishing Darknet Users for Bitcoins  DALL-E&amp;rsquo;s take on &amp;ldquo;A scary person holding rotten onion&amp;rdquo;
+  In 2018, I read about the perfect crime of stealing the money of credit card fraudsters by making fake carding sites.
+At the time, this felt genius to me; the attackers were apparently making a decent living while nobody was presumably coming after them. (Except maybe now someone will, as they got Krebs&amp;rsquo;d by Brian).</description>
+    </item>
+    
     <item>
       <title>UPnProxyChain: a Tool to Exploit Devices Vulnerable to UPnProxy</title>
       <link>https://shufflingbytes.com/posts/upnproxychain-a-tool-to-exploit-devices-vulnerable-to-upnproxy/</link>

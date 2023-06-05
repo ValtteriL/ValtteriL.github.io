@@ -95,9 +95,8 @@
 <p>While listening to <a href="https://risky.biz/RB642/">Risky Business ep. 642</a>, I learned about <a href="https://vblocalhost.com/presentations/from-match-fixing-to-data-exfiltration-a-story-of-messaging-as-a-service-maas/">a botnet that has been abusing a vulnerability in TP-Link routers to provide SMS messaging as a service for years</a>. The exploited vulnerability allowed the botnet operator to send SMS messages on someone else&rsquo;s bill and the operator sold this capability for others, including other criminals. Similar services are no doubt used when you receive smishing messages notifying you about false packages stuck in customs. It is not clear how much this specific botnet operator is making, but there is demand for sure.</p>
 <p>The relatively cheap GoIP-1 GSM gateway device I bought specifically for <a href="../../posts/wardialing-finnish-freephones/">my wardialing project</a> has the functionality to send SMS messages and to make calls on the PSTN network. Thus, compromising it would grant a hacker not only the possibility to send smishing messages, but also to make (scam) calls. The device also did not come across as too secure by default so the time investment into hacking one might be small. A device that powerful and easily hackable would be an ideal target for the SMS messaging service operators.</p>
 <p>Intrigued by the business prospect we chose to investigate the device in our “hack weekend” with my good friend and colleague <a href="https://www.linkedin.com/in/lassi-korhonen-b50510127/">Lassi Korhonen</a>. After a weekend of sitting in a dark apartment hacking and occasionally walking to the nearest fast food joint, we uncovered multiple vulnerabilities on the device, some of which enable compromising such devices for the purpose of sending SMS messages or making calls for free.</p>
-<figure>
-    <img src="../../images/hacking-voip-gsm-gateway-in-the-dark.jpeg"
-         alt="Laptop and GSM gateway in a dark apartment"/> <figcaption>
+<figure><img src="../../images/hacking-voip-gsm-gateway-in-the-dark.jpeg"
+         alt="Laptop and GSM gateway in a dark apartment"/><figcaption>
             <p>Sitting in the dark apartment hacking</p>
         </figcaption>
 </figure>
@@ -105,9 +104,8 @@
 <h2 id="a-word-about-hack-weekends">A word about “hack weekends”</h2>
 <p>Hack weekends are something we started having together with Lassi once we had worked on the security field for some time. The idea is that we choose some target that interests us both and work on it under the same roof over a weekend fueled by pizza and sushi.</p>
 <p>During these weekends we catch up on life and learn from each other while having fun hacking. It doesn&rsquo;t have to be hacking though, we may also focus on developing a proof-of-concept (PoC) of something. Sometimes we find something, sometimes we don&rsquo;t, but we always learn something new. I warmly recommend this format of entertainment for those that are fortunate enough to share a nerdy interest with their friend.</p>
-<figure>
-    <img src="../../images/linnaburger-hacker-lunch.jpg"
-         alt="Linnaburger dish with burger, fries, and coke"/> <figcaption>
+<figure><img src="../../images/linnaburger-hacker-lunch.jpg"
+         alt="Linnaburger dish with burger, fries, and coke"/><figcaption>
             <p>On an occasional visit to a nearby fast food joint (Linnaburger in Turku) for lunch</p>
         </figcaption>
 </figure>
@@ -124,13 +122,13 @@
 <p>Information that might be useful for an attacker is leaked from the device to unauthenticated users.</p>
 <h4 id="ping-log">Ping log</h4>
 <p>Opening the following URL in browser reveals the ping log for unauthenticated users. This file is only displayed if the ping functionality has been used since rebooting the device.</p>
-<pre><code>http://192.168.8.1/default/en_US/ping.log
+<pre tabindex="0"><code>http://192.168.8.1/default/en_US/ping.log
 </code></pre><h4 id="call-status">Call status</h4>
 <p>Opening the following URL in browser reveals the call status information for unauthenticated users.</p>
-<pre><code>http://192.168.8.1/default/en_US/dial.xml
+<pre tabindex="0"><code>http://192.168.8.1/default/en_US/dial.xml
 </code></pre><h4 id="sms-inbox">SMS inbox</h4>
 <p>Opening the following URL in browser reveals all stored SMS messages for unauthenticated users.</p>
-<pre><code>http://192.168.9.1/default/en_US/include/sms_store.html
+<pre tabindex="0"><code>http://192.168.9.1/default/en_US/include/sms_store.html
 </code></pre><h4 id="debug-port">Debug port</h4>
 <p>The TCP port 2096 on the device is a debug port that allows the eavesdropping of many events. There is no authentication, thus anyone can simply connect to the port and start secretly collecting information. There is also no encryption.</p>
 <p>The port leaks for example:</p>
@@ -142,21 +140,20 @@
 <li>The content of all received SMS messages when admin browses to that view in the web panel</li>
 </ul>
 <p>The following screenshot shows messages received from the port. Among the messages, it is visible that an SMS message with the content “Hello world!” is sent to a redacted phone number, and that a 5-second test call is made to a redacted phone number.</p>
-<figure>
-    <img src="../../images/goip-debug-port.png"
-         alt="Terminal windows with messages received from goip debug port"/> <figcaption>
+<figure><img src="../../images/goip-debug-port.png"
+         alt="Terminal windows with messages received from goip debug port"/><figcaption>
             <p>SMS messages and phone numbers visible in debug port messages</p>
         </figcaption>
 </figure>
 
 <h3 id="information-disclosure-via-local-file-inclusion-lfi">Information disclosure via Local File Inclusion (LFI)</h3>
 <p>There are two Local File Inclusion (LFI) vulnerabilities in the web panel that allows fetching data useful to an attacker without authentication. Opening the following URLs in browser will display the passwd file of the device.</p>
-<pre><code>http://192.168.9.1/default/en_US/frame.html?content=..%2f..%2f..%2f ..%2f..%2fetc%2fpasswd
+<pre tabindex="0"><code>http://192.168.9.1/default/en_US/frame.html?content=..%2f..%2f..%2f ..%2f..%2fetc%2fpasswd
 http://192.168.9.1/default/en_US/frame.A100.html?sidebar=..%2f..%2f ..%2f..%2f..%2fetc%2fpasswd
 </code></pre><p>These vulnerabilities can be exploited to fetch the serial number, firmware version, and module versions through fetching the file /dev/mtdblock/5.</p>
 <p>The most sensitive file an attacker can request is the config.dat, which stores the whole configuration of the device in cleartext. It includes for example all credentials to the device, including SIP, H.323, and web panel. This file can be requested from /tmp/config.dat if the configuration backup feature has been used. Previously the same information was available in /dev/mtdblock/5 according to the <a href="https://www.exploit-db.com/exploits/44051">Securiteam&rsquo;s report</a>. According to our testing, the data was no longer there in this version of the firmware.</p>
 <p>Opening the following URLs in browser will fetch the config.dat file from a device that has used the configuration backup feature since the last reboot:</p>
-<pre><code>http://192.168.9.1/default/en_US/frame.html?content=..%2f..%2f..%2f ..%2f..%2ftmp%2fconfig.dat
+<pre tabindex="0"><code>http://192.168.9.1/default/en_US/frame.html?content=..%2f..%2f..%2f ..%2f..%2ftmp%2fconfig.dat
 http://192.168.9.1/default/en_US/frame.A100.html?sidebar=..%2f..%2f ..%2f..%2f..%2ftmp%2fconfig.dat
 </code></pre><h3 id="cross-site-scripting-xss">Cross-site scripting (XSS)</h3>
 <p>There were systematic reflected Cross-site scripting (XSS) vulnerabilities in the web panel. Exploiting them is not the most straightforward way for an attacker to gain access to the SMS sending or calling capabilities of the device, therefore I will only report the vulnerable paths and corresponding parameters.</p>
@@ -247,7 +244,7 @@ http://192.168.9.1/default/en_US/frame.A100.html?sidebar=..%2f..%2f ..%2f..%2f..
 <h3 id="denial-of-service">Denial of Service</h3>
 <p>The same LFI vulnerability used in the Information Disclosure subsection can be used to deny the service of the web panel completely. Requesting the file /etc/ipin will cause the web panel to become so slow that it is no longer usable. Any other user will not be able to use the web panel either. Exploitation does not require authentication. Rebooting the device will fix the condition.</p>
 <p>To exploit the vulnerability, open either of the following URLs in your browser:</p>
-<pre><code>http://192.168.9.1/default/en_US/frame.html?content=..%2f..%2f..%2f ..%2f..%2fetc%2fipin
+<pre tabindex="0"><code>http://192.168.9.1/default/en_US/frame.html?content=..%2f..%2f..%2f ..%2f..%2fetc%2fipin
 http://192.168.9.1/default/en_US/frame.A100.html?sidebar=..%2f..%2f ..%2f..%2f..%2fetc%2fipin
 </code></pre><h2 id="how-an-attacker-could-use-these-findings-to-send-free-sms-messages-or-to-make-free-calls">How an attacker could use these findings to send free SMS messages or to make free calls?</h2>
 <p>The attacker profile we consider is someone who can connect to a GoIP-1 device from the internet with only publicly available information and without any higher level of access to the device. Our attacker plans to start SMS messaging or scam calling as a service using GoIP-1 devices, thus they are after the level of access that allows just that.</p>
@@ -268,7 +265,7 @@ http://192.168.9.1/default/en_US/frame.A100.html?sidebar=..%2f..%2f ..%2f..%2f..
         </div><footer class="text-center pb-1">
     <small class="text-muted">
         
-            &copy; Copyright 2022, Valtteri Lehtinen
+            &copy; Copyright 2023, Valtteri Lehtinen
         
         <br>
         Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>
