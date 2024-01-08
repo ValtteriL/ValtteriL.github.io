@@ -2,10 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://shufflingbytes.com/tags/bitcoin/</loc>
-    <lastmod>2023-06-05T18:58:10+03:00</lastmod>
-  </url><url>
     <loc>https://shufflingbytes.com/categories/</loc>
+    <lastmod>2024-01-06T21:50:16+02:00</lastmod>
+  </url><url>
+    <loc>https://shufflingbytes.com/categories/fun/</loc>
+    <lastmod>2024-01-06T21:50:16+02:00</lastmod>
+  </url><url>
+    <loc>https://shufflingbytes.com/tags/iax/</loc>
+    <lastmod>2024-01-06T21:50:16+02:00</lastmod>
+  </url><url>
+    <loc>https://shufflingbytes.com/posts/voip-voice-bridge-with-soundboard-for-prank-calling/</loc>
+    <lastmod>2024-01-06T21:50:16+02:00</lastmod>
+  </url><url>
+    <loc>https://shufflingbytes.com/posts/</loc>
+    <lastmod>2024-01-06T21:50:16+02:00</lastmod>
+  </url><url>
+    <loc>https://shufflingbytes.com/tags/prank/</loc>
+    <lastmod>2024-01-06T21:50:16+02:00</lastmod>
+  </url><url>
+    <loc>https://shufflingbytes.com/tags/ruby/</loc>
+    <lastmod>2024-01-06T21:50:16+02:00</lastmod>
+  </url><url>
+    <loc>https://shufflingbytes.com/</loc>
+    <lastmod>2024-01-06T21:50:16+02:00</lastmod>
+  </url><url>
+    <loc>https://shufflingbytes.com/tags/sip/</loc>
+    <lastmod>2024-01-06T21:50:16+02:00</lastmod>
+  </url><url>
+    <loc>https://shufflingbytes.com/tags/</loc>
+    <lastmod>2024-01-06T21:50:16+02:00</lastmod>
+  </url><url>
+    <loc>https://shufflingbytes.com/tags/telephony/</loc>
+    <lastmod>2024-01-06T21:50:16+02:00</lastmod>
+  </url><url>
+    <loc>https://shufflingbytes.com/tags/bitcoin/</loc>
     <lastmod>2023-06-05T18:58:10+03:00</lastmod>
   </url><url>
     <loc>https://shufflingbytes.com/tags/erlang/</loc>
@@ -17,19 +47,10 @@
     <loc>https://shufflingbytes.com/tags/phishing/</loc>
     <lastmod>2023-06-05T18:58:10+03:00</lastmod>
   </url><url>
-    <loc>https://shufflingbytes.com/posts/</loc>
-    <lastmod>2023-06-05T18:58:10+03:00</lastmod>
-  </url><url>
     <loc>https://shufflingbytes.com/categories/research/</loc>
     <lastmod>2023-06-05T18:58:10+03:00</lastmod>
   </url><url>
     <loc>https://shufflingbytes.com/posts/ripping-off-professional-criminals-by-fermenting-onions-phishing-darknet-users-for-bitcoins/</loc>
-    <lastmod>2023-06-05T18:58:10+03:00</lastmod>
-  </url><url>
-    <loc>https://shufflingbytes.com/</loc>
-    <lastmod>2023-06-05T18:58:10+03:00</lastmod>
-  </url><url>
-    <loc>https://shufflingbytes.com/tags/</loc>
     <lastmod>2023-06-05T18:58:10+03:00</lastmod>
   </url><url>
     <loc>https://shufflingbytes.com/tags/tor/</loc>
@@ -54,12 +75,6 @@
     <lastmod>2022-02-15T20:25:20+02:00</lastmod>
   </url><url>
     <loc>https://shufflingbytes.com/categories/security-assessment/</loc>
-    <lastmod>2022-02-15T20:25:20+02:00</lastmod>
-  </url><url>
-    <loc>https://shufflingbytes.com/tags/sip/</loc>
-    <lastmod>2022-02-15T20:25:20+02:00</lastmod>
-  </url><url>
-    <loc>https://shufflingbytes.com/tags/telephony/</loc>
     <lastmod>2022-02-15T20:25:20+02:00</lastmod>
   </url><url>
     <loc>https://shufflingbytes.com/tags/voip/</loc>

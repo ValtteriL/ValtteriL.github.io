@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en"><head>
+    <title>InmateBridge: Voice Bridge for Prank Calling</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="InmateBridge is a tool to make prank calls over VoIP" />
+
+    
+    
+    
+    <link rel="stylesheet" href="../../css/theme.min.css">
+
+    
+    
+    
+
+    
+    <script async src="https://umami.molemmat.fi/script.js" data-website-id="acfe42e8-c8c8-4f35-9b32-657bafba2981"></script>
+</head>
+<body>
+        <div id="content" class="mx-auto"><header class="container mt-sm-5 mt-4 mb-4 mt-xs-1">
+    <div class="row">
+        <div class="col-sm-4 col-12 text-sm-right text-center pt-sm-4">
+            <a href="../../" class="text-decoration-none">
+                <img id="home-image" class="rounded-circle"
+                    
+                        
+                            src="../../images/avatar.png"
+                        
+                    
+                />
+            </a>
+        </div>
+        <div class="col-sm-8 col-12 text-sm-left text-center">
+            <h2 class="m-0 mb-2 mt-4">
+                <a href="../../" class="text-decoration-none">
+                    
+                        Valtteri Lehtinen
+                    
+                </a>
+            </h2>
+            <p class="text-muted mb-1">
+                
+                    Security Research &amp; Curiosities | Helsinki, Finland
+                
+            </p>
+            <ul id="nav-links" class="list-inline mb-2">
+                
+                
+                    <li class="list-inline-item">
+                        <a class="badge badge-white " href="../../about" title="About">About (hire me)</a>
+                    </li>
+                
+                    <li class="list-inline-item">
+                        <a class="badge badge-white " href="../../posts/" title="Posts">Posts</a>
+                    </li>
+                
+                    <li class="list-inline-item">
+                        <a class="badge badge-white " href="../../categories/" title="Categories">Categories</a>
+                    </li>
+                
+                    <li class="list-inline-item">
+                        <a class="badge badge-white " href="../../posts/index.xml" title="RSS">RSS</a>
+                    </li>
+                
+            </ul>
+            <ul id="nav-social" class="list-inline">
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="https://github.com/ValtteriL" target="_blank">
+                            <i class="fab fa-github fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="https://www.linkedin.com/in/valtterilehtinen/" target="_blank">
+                            <i class="fab fa-linkedin-in fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="mailto:valtteri@shufflingbytes.com" target="_blank">
+                            <i class="fas fa-at fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+    <hr />
+</header>
+<div class="container">
+    <div class="pl-sm-4 ml-sm-5">
+        <figure><img src="../../images/inmatebridge.png"
+         alt="A painting of an old dirty broken payphone with phone hanging loose in dark prison with a sticker with text &#39;InmateBridge&#39; on it. There are laughing prisoners surrounding it."/>
+</figure>
+
+<p>I don&rsquo;t know what it tells about me, but I have a soft spot for prank calls.</p>
+<p>My guilty pleasure is listening to the prank call show <a href="https://phonelosers.com/">Phone Losers of America</a>. In the show, the host Brad calls up unsuspecting people with bizarre stories to get a reaction out of them. He&rsquo;s done it for decades, which you can tell from his ability of giving his victims a hard time on the phone while remaining totally cool himself.</p>
+<p>Many of his pranks are childish and mean, but some of them I find hilarious.</p>
+<p>Over the years, Brad has developed multiple roles he plays using a voice changer and multiple pranks he repeats while slightly twisting them. He also uses many sound effects to boost his pranks.</p>
+<p>Many times I have wanted to replicate his pranks and play them on my friends. Other times I have wondered how much more effective social engineering calls would be with a soundboard.</p>
+<p>During the Christmas holidays, I wanted to try Ruby and decided to build a system that would let me try out my favorite pranks.</p>
+<p>The result is <a href="https://github.com/ValtteriL/inmatebridge">InmateBridge</a>, an application that allows group calling over VoIP and playing sound effects. I included the essential sound effects to enable my favorite pranks and even made a Finnish version of one of them.</p>
+<h2 id="sound-effects">Sound effects</h2>
+<p>I wanted to include a flushing sound, but unfortunately couldn&rsquo;t find the one Brad uses. Here are the included ones (InmateBridge supports bringing your own):</p>
+<ol>
+<li>Call from prison
+<ul>
+<li><figure >
+  <audio controls preload="metadata">
+    <source src="../../audio/you-are-receiving-a-call-from-an-inmate.wav" type="audio/mpeg">
+  </audio>
+  
+</figure><figure >
+  <audio controls preload="metadata">
+    <source src="../../audio/thank-you-your-call-is-connecting.wav" type="audio/mpeg">
+  </audio>
+  
+</figure></li>
+<li><a href="https://youtu.be/C2foeZOuVuU?si=mEqSJOEcBlM6PW0T&amp;t=70">Original prank</a></li>
+<li>The victim supposedly receives the call from a prisoner. Whatever they choose on the menu will result in call connecting. The call then can continue in any direction. Victims are audibly intimidated and reserved.</li>
+</ul>
+</li>
+<li>Call from prison Finnish version
+<ul>
+<li><figure >
+  <audio controls preload="metadata">
+    <source src="../../audio/fi-olet-vastaanottamassa-puhelua-sornaisten-vankilan-selliosastolta.wav" type="audio/mpeg">
+  </audio>
+  
+</figure><figure >
+  <audio controls preload="metadata">
+    <source src="../../audio/fi-kiitos-puhelua-yhdistetaan.wav" type="audio/mpeg">
+  </audio>
+  
+</figure></li>
+<li>Finnish version of the one above.</li>
+</ul>
+</li>
+<li>Buttslam
+<ul>
+<li><figure >
+  <audio controls preload="metadata">
+    <source src="../../audio/buttslam.wav" type="audio/mpeg">
+  </audio>
+  
+</figure></li>
+<li><a href="https://www.youtube.com/watch?v=VsfaKNIarp0">Long prank, the sound effect comes at the very end</a></li>
+<li>When Brad lets victims in on the prank, he may play this sound to make victims think they are on the air on the radio.</li>
+</ul>
+</li>
+<li>Funny hold music
+<ul>
+<li><figure >
+  <audio controls preload="metadata">
+    <source src="../../audio/i-wonder-whats-inside-your-bh.wav" type="audio/mpeg">
+  </audio>
+  
+</figure></li>
+<li><a href="https://www.youtube.com/watch?v=wjcicfMzyuI">Long one</a></li>
+<li>Brad is an arrogant customer support rep, who has somehow damaged the victim&rsquo;s service. When the victim wants to talk to the manager, Brad &lsquo;transfers&rsquo; them with this track as the hold music. The ones that remain on the line are furious when they reach the manager Carol (Brad with voice changer).</li>
+</ul>
+</li>
+</ol>
+<h2 id="implementation">Implementation</h2>
+<p>InmateBridge is deployed as a container, which includes Asterisk PBX and a console UI. The console UI (the Ruby application) is an <a href="https://docs.asterisk.org/Asterisk_20_Documentation/API_Documentation/Dialplan_Applications/Stasis/">Asterisk Stasis application</a> which communicates with the PBX over REST and Websocket. The PBX needs a SIP trunk to communicate with the telephone network.</p>
+<p>Users will call into the bridge using IAX, and use the console UI to play sounds and to initiate calls to victims. Any number of people can call into the bridge and listen to prank calls in action.</p>
+<figure><img src="../../images/inmatebridge-implementation.png"
+         alt="High-level architecture of InmateBridge"/><figcaption>
+            <p>Architecture and workflow of InmateBridge</p>
+        </figcaption>
+</figure>
+
+<h2 id="calling">Calling</h2>
+<p>I got a SIP trunk from Twilio. Then I fired up InmateBridge with the Finnish prison sound effects at my poor little brother, and a couple of friends. I haven&rsquo;t made any cold calling in a while, but I wonder how this would play out as an icebreaker (Probably terribly!).</p>
+<p><a href="https://asciinema.org/a/630473"><img src="https://asciinema.org/a/630473.svg" alt="asciicast"></a></p>
+<p>Bored and feeling childish? Want to spice up social engineering calls? Want to be a different cold caller or job applicant? Check out <a href="https://github.com/ValtteriL/inmatebridge">InmateBridge</a>!</p>
+
+    </div>
+
+            </div>
+        </div><footer class="text-center pb-1">
+    <small class="text-muted">
+        
+            &copy; Copyright 2024, Valtteri Lehtinen
+        
+        <br>
+        Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>
+        and <a href="https://github.com/austingebauer/devise" target="_blank">Devise</a>
+    </small>
+</footer>
+</body>
+</html>
