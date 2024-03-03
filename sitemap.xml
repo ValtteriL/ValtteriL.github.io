@@ -3,7 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://shufflingbytes.com/categories/</loc>
-    <lastmod>2024-01-06T21:50:16+02:00</lastmod>
+    <lastmod>2024-03-03T16:36:06+02:00</lastmod>
+  </url><url>
+    <loc>https://shufflingbytes.com/categories/guide/</loc>
+    <lastmod>2024-03-03T16:36:06+02:00</lastmod>
+  </url><url>
+    <loc>https://shufflingbytes.com/tags/guide/</loc>
+    <lastmod>2024-03-03T16:36:06+02:00</lastmod>
+  </url><url>
+    <loc>https://shufflingbytes.com/posts/how-to-make-nmap-recognize-new-services/</loc>
+    <lastmod>2024-03-03T16:36:06+02:00</lastmod>
+  </url><url>
+    <loc>https://shufflingbytes.com/tags/nmap/</loc>
+    <lastmod>2024-03-03T16:36:06+02:00</lastmod>
+  </url><url>
+    <loc>https://shufflingbytes.com/tags/opc-ua/</loc>
+    <lastmod>2024-03-03T16:36:06+02:00</lastmod>
+  </url><url>
+    <loc>https://shufflingbytes.com/posts/</loc>
+    <lastmod>2024-03-03T16:36:06+02:00</lastmod>
+  </url><url>
+    <loc>https://shufflingbytes.com/</loc>
+    <lastmod>2024-03-03T16:36:06+02:00</lastmod>
+  </url><url>
+    <loc>https://shufflingbytes.com/tags/</loc>
+    <lastmod>2024-03-03T16:36:06+02:00</lastmod>
   </url><url>
     <loc>https://shufflingbytes.com/categories/fun/</loc>
     <lastmod>2024-01-06T21:50:16+02:00</lastmod>
@@ -14,22 +38,13 @@
     <loc>https://shufflingbytes.com/posts/voip-voice-bridge-with-soundboard-for-prank-calling/</loc>
     <lastmod>2024-01-06T21:50:16+02:00</lastmod>
   </url><url>
-    <loc>https://shufflingbytes.com/posts/</loc>
-    <lastmod>2024-01-06T21:50:16+02:00</lastmod>
-  </url><url>
     <loc>https://shufflingbytes.com/tags/prank/</loc>
     <lastmod>2024-01-06T21:50:16+02:00</lastmod>
   </url><url>
     <loc>https://shufflingbytes.com/tags/ruby/</loc>
     <lastmod>2024-01-06T21:50:16+02:00</lastmod>
   </url><url>
-    <loc>https://shufflingbytes.com/</loc>
-    <lastmod>2024-01-06T21:50:16+02:00</lastmod>
-  </url><url>
     <loc>https://shufflingbytes.com/tags/sip/</loc>
-    <lastmod>2024-01-06T21:50:16+02:00</lastmod>
-  </url><url>
-    <loc>https://shufflingbytes.com/tags/</loc>
     <lastmod>2024-01-06T21:50:16+02:00</lastmod>
   </url><url>
     <loc>https://shufflingbytes.com/tags/telephony/</loc>

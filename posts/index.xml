@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2024, Valtteri Lehtinen</copyright>
-    <lastBuildDate>Sat, 06 Jan 2024 21:50:16 +0200</lastBuildDate><atom:link href="https://shufflingbytes.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 03 Mar 2024 16:36:06 +0200</lastBuildDate><atom:link href="https://shufflingbytes.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Make Nmap Recognize New Services</title>
+      <link>https://shufflingbytes.com/posts/how-to-make-nmap-recognize-new-services/</link>
+      <pubDate>Sun, 03 Mar 2024 16:36:06 +0200</pubDate>
+      
+      <guid>https://shufflingbytes.com/posts/how-to-make-nmap-recognize-new-services/</guid>
+      <description>How to Make Nmap Recognize New Services Nmap has been my favorite hacking tool for years. Its accuracy is unchallenged and it boasts hundreds of scripts that make it vital in every pentest engagement.
+Lately, I&amp;rsquo;ve been working more on the ICS space, developing a OPC UA vulnerability scanner. To my dismay, I noticed that Nmap does not recognize OPC UA services. This makes black box security testing of this dominating ICS protocol tricky, as OPC UA server vendors are known to use non-standard ports extensively.</description>
+    </item>
+    
     <item>
       <title>InmateBridge: Voice Bridge for Prank Calling</title>
       <link>https://shufflingbytes.com/posts/voip-voice-bridge-with-soundboard-for-prank-calling/</link>

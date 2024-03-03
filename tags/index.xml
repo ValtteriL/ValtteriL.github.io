@@ -7,7 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2024, Valtteri Lehtinen</copyright>
-    <lastBuildDate>Sat, 06 Jan 2024 21:50:16 +0200</lastBuildDate><atom:link href="https://shufflingbytes.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 03 Mar 2024 16:36:06 +0200</lastBuildDate><atom:link href="https://shufflingbytes.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>guide</title>
+      <link>https://shufflingbytes.com/tags/guide/</link>
+      <pubDate>Sun, 03 Mar 2024 16:36:06 +0200</pubDate>
+      
+      <guid>https://shufflingbytes.com/tags/guide/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nmap</title>
+      <link>https://shufflingbytes.com/tags/nmap/</link>
+      <pubDate>Sun, 03 Mar 2024 16:36:06 +0200</pubDate>
+      
+      <guid>https://shufflingbytes.com/tags/nmap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>opc ua</title>
+      <link>https://shufflingbytes.com/tags/opc-ua/</link>
+      <pubDate>Sun, 03 Mar 2024 16:36:06 +0200</pubDate>
+      
+      <guid>https://shufflingbytes.com/tags/opc-ua/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>IAX</title>
       <link>https://shufflingbytes.com/tags/iax/</link>

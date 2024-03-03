@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nmap on Shuffling Bytes | Valtteri Lehtinen</title>
+    <link>https://shufflingbytes.com/tags/nmap/</link>
+    <description>Recent content in nmap on Shuffling Bytes | Valtteri Lehtinen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; Copyright 2024, Valtteri Lehtinen</copyright>
+    <lastBuildDate>Sun, 03 Mar 2024 16:36:06 +0200</lastBuildDate><atom:link href="https://shufflingbytes.com/tags/nmap/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Make Nmap Recognize New Services</title>
+      <link>https://shufflingbytes.com/posts/how-to-make-nmap-recognize-new-services/</link>
+      <pubDate>Sun, 03 Mar 2024 16:36:06 +0200</pubDate>
+      
+      <guid>https://shufflingbytes.com/posts/how-to-make-nmap-recognize-new-services/</guid>
+      <description>How to Make Nmap Recognize New Services Nmap has been my favorite hacking tool for years. Its accuracy is unchallenged and it boasts hundreds of scripts that make it vital in every pentest engagement.
+Lately, I&amp;rsquo;ve been working more on the ICS space, developing a OPC UA vulnerability scanner. To my dismay, I noticed that Nmap does not recognize OPC UA services. This makes black box security testing of this dominating ICS protocol tricky, as OPC UA server vendors are known to use non-standard ports extensively.</description>
+    </item>
+    
+  </channel>
+</rss>
