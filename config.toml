@@ -12,7 +12,7 @@ copyright = "&copy; Copyright 2024, Valtteri Lehtinen"
 [menu]
   [[menu.main]]
     identifier = "about"
-    name = "About (hire me)"
+    name = "About"
     title = "About"
     url = "/about"
     weight = -110
