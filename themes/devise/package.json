@@ -1,0 +1,20 @@
+{
+  "name": "devise",
+  "version": "1.0.0",
+  "description": "devise hugo theme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.14.0",
+    "bootstrap": "^4.5.2"
+  },
+  "keywords": [
+    "hugo",
+    "theme"
+  ],
+  "author": "Austin Gebauer",
+  "license": "MIT",
+  "devDependencies": {}
+}
