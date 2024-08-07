@@ -1,0 +1,57 @@
+baseURL = "https://shufflingbytes.com/"
+languageCode = "en-us"
+title = "Shuffling Bytes | Valtteri Lehtinen"
+theme = "devise"
+enableRobotsTXT = true
+relativeURLs = true
+enableEmoji = true
+copyright = "&copy; Copyright 2024, Valtteri Lehtinen"
+
+
+# Main menu items
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "About (hire me)"
+    title = "About"
+    url = "/about"
+    weight = -110
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    title = "Posts"
+    url = "/posts/"
+    weight = -100
+  [[menu.main]]
+    identifier = "categories"
+    name = "Categories"
+    title = "Categories"
+    url = "/categories/"
+    weight = -90
+  [[menu.main]]
+    identifier = "rss"
+    name = "RSS"
+    title = "RSS"
+    url = "/posts/index.xml"
+    weight = -90
+
+
+[params]
+  description = "Security Research & Curiosities"      # Your meta description of the site
+  header_title = "Valtteri Lehtinen"                 # Your header title
+  header_subtitle = "Security Research & Curiosities | Helsinki, Finland" # Your header subtitle
+  home_image = "/images/avatar.png"          # Path to header image starting from the static directory
+  recent_posts = 5                           # Max amount of recent posts to show
+  mainSections = ["posts", "post", "blog"]   # Main sections to include in recent posts
+  [params.style]                             # CSS style overrides
+    backgroundColor = "#f8f9fa"
+    fontColor = "#212529"
+  [[params.social]]
+    fa_icon = "fab fa-github fa-1x"          # Font Awesome icon class
+    href = "https://github.com/ValtteriL"      # Link to associate with icon (http://, https://, mailto:)
+  [[params.social]]
+    fa_icon = "fab fa-linkedin-in fa-1x"
+    href = "https://www.linkedin.com/in/valtterilehtinen/"
+  [[params.social]]
+    fa_icon = "fas fa-at fa-1x"
+    href = "mailto:valtteri@shufflingbytes.com"
