@@ -1,6 +1,6 @@
 baseURL = "https://shufflingbytes.com/"
 languageCode = "en-us"
-title = "Shuffling Bytes | Valtteri Lehtinen"
+title = "Valtteri Lehtinen"
 theme = "devise"
 enableRobotsTXT = true
 relativeURLs = true
