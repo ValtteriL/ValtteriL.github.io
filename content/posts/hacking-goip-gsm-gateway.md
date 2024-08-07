@@ -8,7 +8,7 @@ tags: [
     "telephony",
 ]
 categories: [
-    "Security assessment",
+    "Research",
 ]
 draft: false
 ---

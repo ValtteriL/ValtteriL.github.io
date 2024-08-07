@@ -13,7 +13,6 @@ tags: [
 ]
 categories: [
     "Research",
-    "Tor",
 ]
 ---
 
