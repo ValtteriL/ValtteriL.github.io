@@ -1,7 +1,8 @@
 ---
 title: "What I learned of the VOIP hacker scene by setting up a SIP Honeypot"
+subtitle: "My study of PBX hackers using SIP honeypot"
 date: 2021-04-17T18:58:44+03:00
-description: "Post describing my study of PBX hackers using SIP honeypot."
+description: "Post describing my study of PBX hackers using SIP honeypot"
 tags: [
     "VOIP",
     "honeypot",
@@ -14,15 +15,13 @@ categories: [
 draft: false
 ---
 
-# What I learned of the VOIP hacker scene by setting up a SIP Honeypot
-
-I got interested in telephones and the Voice Over IP (VOIP) scene soon after reading Phil Lapsley's Exploding the phone (2013). 
+I got interested in telephones and the Voice Over IP (VOIP) scene soon after reading Phil Lapsley's Exploding the phone (2013).
 According to the book, there is a whole underground of VOIP hackers.
 I had not come across them while lurking in the information security scene.
 After my interest sparked, I started paying more attention to telephone-related security research.
 
 The podcast Darknet Diaries by Jack Rhysider has a great first episode called The Phreaky World of PBX Hacking.
-This episode describes the modus operandi of Private Branch eXchange (PBX) hackers on a high level while telling the stories of a few convicted PBX hackers. 
+This episode describes the modus operandi of Private Branch eXchange (PBX) hackers on a high level while telling the stories of a few convicted PBX hackers.
 According to the episode, PBX hackers make money by first hacking into PBX's and then placing calls to premium numbers they own.
 
 While at the Finnish hacker conference Disobey back in 2019 I saw a presentation Starting from scratch – Mobile Core Network Honeypot by Ms. Sebeni and Dr. Holtmanns.
@@ -104,7 +103,8 @@ Only the account with extension 100 was broken into.
 
 The internal hello-world number at extension 123 was not dialed by any attacker.
 
-##### The most guessed usernames
+### The most guessed usernames
+
 |Username|Number of times guessed|
 |:-:|:-:|
 |1001|11681|
@@ -113,7 +113,8 @@ The internal hello-world number at extension 123 was not dialed by any attacker.
 |11|9582|
 |1111|9444|
 
-##### The most called countries
+### The most called countries
+
 |Prefix code|Country|Number of times called|
 |:-:|:-:|:-:|
 |+972|Israel|35482|
@@ -122,7 +123,8 @@ The internal hello-world number at extension 123 was not dialed by any attacker.
 |+64|New Zealand|10578|
 |+46|Sweden|5236|
 
-##### The most used User-Agents
+### The most used User-Agents
+
 |User-Agent|Number|
 |:-:|:-:|
 | |320683|
@@ -215,6 +217,7 @@ These attacks went undetected if those exploiting packets conformed to SIP proto
 ### Questions to be answered by future work
 
 It would be interesting to get answers to the following questions:
+
 - Which passwords are used in brute force attacks?
 - Are other VOIP protocols attacked? How?
 - Are the non-VOIP-specific services attacked by PBX hackers? How?
@@ -222,6 +225,7 @@ It would be interesting to get answers to the following questions:
 All these questions could be answered by conducting a similar honeypot study with different configurations.
 
 ## How to protect your VOIP setup
+
 To protect your SIP & RTP-based VOIP setup from the attacks my honeypot received, you probably get the best effect using fail2ban or some other brute force stopper.
 Fail2ban will ban the attacker IPs after a few failed attempts for a while.
 This will stop the simple attack scripts, and at least greatly slow down scripts that are smart enough to adapt to banning.

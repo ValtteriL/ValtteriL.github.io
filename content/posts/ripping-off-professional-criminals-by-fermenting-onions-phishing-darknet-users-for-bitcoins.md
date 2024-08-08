@@ -1,5 +1,6 @@
 ---
-title: "Ripping Off Professional Criminals by Fermenting Onions - Phishing Darknet Users for Bitcoins"
+title: "Ripping Off Professional Criminals by Fermenting Onions"
+subtitle: "Phishing Darknet Users for Bitcoins on large scale using OnionFermenter"
 date: 2023-06-05T18:58:10+03:00
 draft: true
 description: "Writeup of a tool for creating bitcoin stealing phishing clones of onion services on large scale"
@@ -13,11 +14,8 @@ tags: [
 ]
 categories: [
     "Research",
-    "Tor",
 ]
 ---
-
-# Ripping Off Professional Criminals by Fermenting Onions - Phishing Darknet Users for Bitcoins
 
 {{< figure src="/images/a-scary-person-holding-rotten-onion.png" alt="A scary person holding rotten onion" caption="DALL-E's take on \"A scary person holding rotten onion\"" >}}
 
@@ -42,6 +40,7 @@ While effective, it contains many manual actions. All this also leaves a lot of 
 Doing the same scam for darknet sites avoids leaving these behind. There are no domains to register, and no IP addresses *should* leak out.
 
 Darknet has further the following advantages for hackers:
+
 - Domains are difficult to remember
 - There is no central trusted source for discovering darknet services
 - There is no central trusted entity that decides which sites are legitimate
@@ -49,7 +48,8 @@ Darknet has further the following advantages for hackers:
 - General slowness and occasional unavailability of services
 - Everyone is using virtual currencies when commercing
 
-Inspired by 2FA-resistant reverse proxy phishing kits [Modlishka](https://github.com/drk1wi/Modlishka) and [Evilginx](https://github.com/kgretzky/evilginx2), I planned to exploit these properties as follows: 
+Inspired by 2FA-resistant reverse proxy phishing kits [Modlishka](https://github.com/drk1wi/Modlishka) and [Evilginx](https://github.com/kgretzky/evilginx2), I planned to exploit these properties as follows:
+
 1. I publish a reverse proxy as an onion service
 2. The reverse proxy relays all traffic between the visitors and the onion service I want to clone
 3. The proxy will, on the fly, modify the traffic to not disclose its presence to the visitor or the target darknet service and to redirect any fund transfers to my wallet
@@ -171,7 +171,7 @@ Apart from these offenses, you serve the same content as your victim service. De
 
 Even if the idea of hacking criminals for profit with Onion Fermenter initially seemed a perfect crime, it is still a crime. Despite possibly being useful in fighting crime, OF muddies the waters in the darknet and undermines trust. Therefore, I strongly discourage you from actually putting OF into use.
 
-I hope OF demonstrates how easy it is to attack darknet users with phishing. Such phishing has a long history, and OF does not bring much new aside from automation and scale to it. But now with the attack demystified and the information in the public domain, anyone can launch such attacks. 
+I hope OF demonstrates how easy it is to attack darknet users with phishing. Such phishing has a long history, and OF does not bring much new aside from automation and scale to it. But now with the attack demystified and the information in the public domain, anyone can launch such attacks.
 
 Even though the short-term effect of releasing OF may be negative to Tor users, the long-term effect is likely the opposite. In the short term, there will be an increase in phishing attacks and decreased trust between users. Over time users likely get wiser and/or the Tor project or community introduces technical mitigations to the attack.
 

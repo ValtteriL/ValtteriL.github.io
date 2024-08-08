@@ -1,5 +1,6 @@
 ---
 title: "How to Make Nmap Recognize New Services"
+subtitle: "Step-by-step instructions for extending nmap service detection capabilities"
 description: "Step-by-step instructions for extending nmap service detection capabilities"
 date: 2024-03-03T16:36:06+02:00
 draft: false
@@ -12,8 +13,6 @@ categories: [
     "Guide",
 ]
 ---
-
-## How to Make Nmap Recognize New Services
 
 Nmap has been my favorite hacking tool for years. Its accuracy is unchallenged and it boasts hundreds of scripts that make it vital in every pentest engagement.
 

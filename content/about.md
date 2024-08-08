@@ -5,12 +5,15 @@ draft: false
 ---
 
 ### Me
-Hi! My name is Valtteri. I am a hacker from Helsinki, Finland.
 
-I do security testing and DevOps as a freelancer, and develop [OPC UA security scanner](https://opalopc.com) through my company [Molemmat Oy](https://molemmat.fi).
+Hi! My name is Valtteri. I'm a hacker.
 
-### This blog
-In this blog I publish my research and curiosities around (computer) security.
+I love to apply knowledge across domains and spend much of my limited freetime trying novel things on a computer.
+Some of those experiments end up here as writeups.
 
-### Contact
-valtteri@shufflingbytes.com
+Beyond my love for computers and security, I enjoy books, board games, trekking, and fishing.
+
+I work as a Senior Security Engineer at [Konecranes](https://www.konecranes.com/).
+Previously, I worked as a [freelancer](https://molemmat.fi) and developed an [OPC UA security scanner](https://opalopc.com).
+
+Feel free to reach out with any questions or just to say hi at [valtteri@shufflingbytes.com](mailto:valtteri@shufflingbytes.com)

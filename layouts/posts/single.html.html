@@ -1,0 +1,21 @@
+{{ define "main" }}
+    <div class="pl-sm-2">
+        <div class="mb-3">
+            <h1 class="mb-0">{{ .Title }}</h1>
+            {{ if .Params.Subtitle }}
+            <div class="SubtitleWrapper">
+                <h2 class="Subtitle">{{ .Params.Subtitle }}</h2>
+            </div>
+            {{ end }}
+            <small class="text-muted">Published {{ .Date.Format "January 2, 2006"  }} | {{ printf "%d min read" .ReadingTime }}</small>
+            <div class="TocWrapper">
+                <h4>Contents</h4>
+                {{ .TableOfContents }}
+            </div>
+        </div>
+
+        <article>
+            {{ .Content | replaceRE "(<h[1-6]\\sid=\"([^\"]+)\"\\s?>)(.+)(</h[1-6]+>)" "${1}<a href=\"#${2}\">${3}</a>${4}" | safeHTML }}
+        </article>
+    </div>
+{{ end }}

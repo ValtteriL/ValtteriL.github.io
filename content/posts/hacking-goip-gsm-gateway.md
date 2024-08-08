@@ -1,5 +1,6 @@
 ---
 title: "GoIP-1 GSM gateway could be harnessed for phone fraud by hackers"
+subtitle: "GoIP-1 contains vulnerabilities that allow hackers to send SMS messages and make calls for free"
 date: 2022-02-15T20:25:20+02:00
 description: "GoIP-1 GSM gateway contains vulnerabilities that allow hackers to send SMS messages and make calls for free"
 tags: [
@@ -8,12 +9,10 @@ tags: [
     "telephony",
 ]
 categories: [
-    "Security assessment",
+    "Research",
 ]
 draft: false
 ---
-
-# GoIP-1 GSM gateway could be harnessed for phone fraud by hackers
 
 While listening to [Risky Business ep. 642](https://risky.biz/RB642/), I learned about [a botnet that has been abusing a vulnerability in TP-Link routers to provide SMS messaging as a service for years](https://vblocalhost.com/presentations/from-match-fixing-to-data-exfiltration-a-story-of-messaging-as-a-service-maas/). The exploited vulnerability allowed the botnet operator to send SMS messages on someone else's bill and the operator sold this capability for others, including other criminals. Similar services are no doubt used when you receive smishing messages notifying you about false packages stuck in customs. It is not clear how much this specific botnet operator is making, but there is demand for sure.
 
@@ -41,7 +40,6 @@ In late 2017 the author Securiteam has submitted [multiple vulnerabilities](http
 
 Aside from concrete vulnerabilities, GoIP devices are ridden with weak default credentials that users are not forced to change. The weak credentials could most likely be used to gain unauthorized access to the same number of GoIP devices as with the past vulnerabilities (and the new ones disclosed in this blog post).
 
-
 ## Our findings
 
 The firmware version of the GoIP-1 device was GHSFVT-1.1-67-5 M26FBR03A02 RSIM. Before testing, the device was reset to the default configuration, and a static IP was set to the LAN interface. 
@@ -55,21 +53,24 @@ Information that might be useful for an attacker is leaked from the device to un
 #### Ping log
 
 Opening the following URL in browser reveals the ping log for unauthenticated users. This file is only displayed if the ping functionality has been used since rebooting the device.
-```
+
+```text
 http://192.168.8.1/default/en_US/ping.log
 ```
 
 #### Call status
 
 Opening the following URL in browser reveals the call status information for unauthenticated users.
-```
+
+```text
 http://192.168.8.1/default/en_US/dial.xml
 ```
 
 #### SMS inbox
 
 Opening the following URL in browser reveals all stored SMS messages for unauthenticated users.
-```
+
+```text
 http://192.168.9.1/default/en_US/include/sms_store.html
 ```
 
@@ -93,7 +94,7 @@ The following screenshot shows messages received from the port. Among the messag
 
 There are two Local File Inclusion (LFI) vulnerabilities in the web panel that allows fetching data useful to an attacker without authentication. Opening the following URLs in browser will display the passwd file of the device.
 
-```
+```text
 http://192.168.9.1/default/en_US/frame.html?content=..%2f..%2f..%2f ..%2f..%2fetc%2fpasswd
 http://192.168.9.1/default/en_US/frame.A100.html?sidebar=..%2f..%2f ..%2f..%2f..%2fetc%2fpasswd
 ```
@@ -103,7 +104,8 @@ These vulnerabilities can be exploited to fetch the serial number, firmware vers
 The most sensitive file an attacker can request is the config.dat, which stores the whole configuration of the device in cleartext. It includes for example all credentials to the device, including SIP, H.323, and web panel. This file can be requested from /tmp/config.dat if the configuration backup feature has been used. Previously the same information was available in /dev/mtdblock/5 according to the [Securiteam's report](https://www.exploit-db.com/exploits/44051). According to our testing, the data was no longer there in this version of the firmware.
 
 Opening the following URLs in browser will fetch the config.dat file from a device that has used the configuration backup feature since the last reboot:
-```
+
+```text
 http://192.168.9.1/default/en_US/frame.html?content=..%2f..%2f..%2f ..%2f..%2ftmp%2fconfig.dat
 http://192.168.9.1/default/en_US/frame.A100.html?sidebar=..%2f..%2f ..%2f..%2f..%2ftmp%2fconfig.dat
 ```
@@ -116,7 +118,6 @@ There were systematic reflected Cross-site scripting (XSS) vulnerabilities in th
 
 The following paths contain parameters vulnerable to reflected cross-site scripting. It is possible to provide input that is reflected without sanitization and thus cause Javascript to be executed in the context of the application. The input is however reflected only once and is not saved anywhere. The vulnerable parameters in each path shown in the table below.
 
-
 |Path|Vulnerable parameter|
 |:-|-:|
 |/default/en_US/tools.html|type|
@@ -128,7 +129,6 @@ The following paths contain parameters vulnerable to reflected cross-site script
 |/default/en US/sms_info.html|smskey|
 |/default/en US/sms_info.html|telnum|
 |/default/en US/sms_info.html|smscontent|
-
 
 #### Stored XSS
 
@@ -148,7 +148,8 @@ The following paths contain parameters vulnerable to stored cross-site scripting
 The same LFI vulnerability used in the Information Disclosure subsection can be used to deny the service of the web panel completely. Requesting the file /etc/ipin will cause the web panel to become so slow that it is no longer usable. Any other user will not be able to use the web panel either. Exploitation does not require authentication. Rebooting the device will fix the condition.
 
 To exploit the vulnerability, open either of the following URLs in your browser:
-```
+
+```text
 http://192.168.9.1/default/en_US/frame.html?content=..%2f..%2f..%2f ..%2f..%2fetc%2fipin
 http://192.168.9.1/default/en_US/frame.A100.html?sidebar=..%2f..%2f ..%2f..%2f..%2fetc%2fipin
 ```

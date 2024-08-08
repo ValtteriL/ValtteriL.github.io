@@ -1,5 +1,6 @@
 ---
 title: "I made 56874 calls to explore the telephone network. Here's what I found"
+subtitle: "Wardialing of Finnish toll-free numbers, recording of the calls, and analysis of the results"
 date: 2021-06-23T11:06:16+03:00
 description: "Post describing my research wardialing Finnish freephones."
 tags: [
@@ -13,8 +14,6 @@ categories: [
 ]
 draft: false
 ---
-
-# I made 56874 calls to explore the telephone network. Here's what I found.
 
 >What kind of systems are there in the Finnish telephone network today?
 
@@ -43,8 +42,8 @@ Especially about wardialing Finnish number-spaces or as recent as 2021.
 
 ## How I tried to avoid scaring people with ghost calls in the middle of the night
 
-On the receiving end, wardialing causes a ghost call. 
-You get a call, which you pick up, but the caller remains silent. 
+On the receiving end, wardialing causes a ghost call.
+You get a call, which you pick up, but the caller remains silent.
 After a while, the caller hangs up.
 This alone can feel threatening to some people.
 What if additionally you were woken up by the call in the middle of the night and later you learned that everything you said on phone was recorded, shared with third parties, and published?
@@ -54,6 +53,7 @@ Therefore, I took action to minimize any harm caused to the owners of phone numb
 Voice is personal information in itself.
 People may also disclose information on the phone they do not want to be shared or published.
 To avoid violating people's privacy, I did the following:
+
 - Chose not to publish any recordings where a human answers
 - Chose not to disclose any phone numbers
 - Ensured that any recording of private individuals did not end up outside the EU, being saved by third parties, or used to train machine learning models
@@ -106,6 +106,7 @@ I used the [Finland's E164 numbering plan](https://www.traficom.fi/sites/default
 This document from early 2019 specifies the different number spaces and describes their purpose on a high level.
 
 I had the following requirements for the called numbers:
+
 - No premium numbers (my budget was 5 EUR)
 - No private individuals (I did not want to annoy and scare people with ghost calls in the middle of the night)
 - Maximum amount of systems
@@ -168,7 +169,6 @@ All recordings that were answered by a machine were recordings of human voice, *
 **Music** contains recordings that contain music for the whole recording.
 **Unknown (machine)** contains recordings of calls that contain electromechanical sound.
 
-
 Recordings of human voice were either **announcements** that announced something (such as number not in use) or asked for input.
 Recordings asking for input were either **test numbers**, **voice mails**, **teleconferencing services** or they could not be identified, thus **unknown (waiting for input)**.
 
@@ -177,6 +177,7 @@ Out of these, 69% were identified as interesting.
 Thus only 2% of all calls got an interesting answer.
 
 ## There are only 74 unique interesting answers
+
 As the large majority of interesting recordings that wait for input were unknown, I decided to classify them further.
 The classification was done by identical recording content.
 Different recordings inside categories are called variants.
@@ -296,7 +297,7 @@ There were 6 of these.
 What could this be?
 A confirmation message for what?
 
-**Edit 25.6.2021**: I received multiple messages regarding this recording. 
+**Edit 25.6.2021**: I received multiple messages regarding this recording.
 All stated that it is actually saying "Mobile confirmation message for Global Crossing".
 Global Crossing was a telecommunications company that went bankrupt back in 2002 and was acquired by Level 3 Communications.
 Still no clue what the message is for, though.
@@ -322,6 +323,7 @@ Nuclear Power Plant status:
 {{<audio src="/audio/25898.flac">}}
 
 ## What kind of systems are there in the Finnish telephone network?
+
 Based on my results, there are private and business telephones, fax machines, PBXs, and unidentified systems.
 The PBXs serve for example as teleconferencing systems, test numbers, and voice mails.
 Some PBXs may also have other purposes, but this research was not enough to find out what.
