@@ -6,16 +6,14 @@ draft: false
 
 ### Me
 
-Hi! My name is Valtteri. I'm a hacker and a father of 2.
+Hi! My name is Valtteri. I'm a hacker.
 
-I love to apply knowledge across domains and spend much of my limited freetime trying novel things on a computer. Some of those experiments end up here as writeups.
+I love to apply knowledge across domains and spend much of my limited freetime trying novel things on a computer.
+Some of those experiments end up here as writeups.
 
-I'm currently employed as a Senior Security Engineer at [Konecranes](https://www.konecranes.com/). Formerly I have done [freelancing](https://molemmat.fi) and developed an [OPC UA security scanner](https://opalopc.com).
+Beyond my love for computers and security, I enjoy books, board games, trekking, and fishing.
 
-### This blog
+I work as a Senior Security Engineer at [Konecranes](https://www.konecranes.com/).
+Previously, I worked as a [freelancer](https://molemmat.fi) and developed an [OPC UA security scanner](https://opalopc.com).
 
-In this blog I publish my research and curiosities around (computer) security.
-
-### Contact
-
-If you have any questions or just want to say hi, you can reach me at [valtteri@shufflingbytes.com](mailto:valtteri@shufflingbytes.com)
+Feel free to reach out with any questions or just to say hi at [valtteri@shufflingbytes.com](mailto:valtteri@shufflingbytes.com)
