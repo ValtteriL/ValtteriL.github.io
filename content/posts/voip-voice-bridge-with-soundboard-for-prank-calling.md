@@ -2,6 +2,7 @@
 title: "InmateBridge: Voice Bridge for Prank Calling"
 date: 2024-01-06T21:50:16+02:00
 description: "InmateBridge is a tool to make prank calls over VoIP"
+subtitle: "Prank calling over VoIP with sounds effects"
 draft: false
 tags: [
     "SIP",

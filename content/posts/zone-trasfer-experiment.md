@@ -1,5 +1,6 @@
 ---
 title: "DNS records of 1% .fi domains exposed through Zone Transfers"
+subtitle: "DNS misconfiguration from the 90s still common among Finnish domains"
 date: 2022-01-13T16:16:31+02:00
 description: "Post describing my experiment of finding out how commonly nameservers are misconfigured to allow zone transfers"
 tags: [

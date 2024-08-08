@@ -1,5 +1,6 @@
 ---
 title: "GoIP-1 GSM gateway could be harnessed for phone fraud by hackers"
+subtitle: "GoIP-1 contains vulnerabilities that allow hackers to send SMS messages and make calls for free"
 date: 2022-02-15T20:25:20+02:00
 description: "GoIP-1 GSM gateway contains vulnerabilities that allow hackers to send SMS messages and make calls for free"
 tags: [

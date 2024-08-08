@@ -1,5 +1,6 @@
 ---
 title: "I made 56874 calls to explore the telephone network. Here's what I found"
+subtitle: "Wardialing of Finnish toll-free numbers, recording of the calls, and analysis of the results"
 date: 2021-06-23T11:06:16+03:00
 description: "Post describing my research wardialing Finnish freephones."
 tags: [
@@ -41,8 +42,8 @@ Especially about wardialing Finnish number-spaces or as recent as 2021.
 
 ## How I tried to avoid scaring people with ghost calls in the middle of the night
 
-On the receiving end, wardialing causes a ghost call. 
-You get a call, which you pick up, but the caller remains silent. 
+On the receiving end, wardialing causes a ghost call.
+You get a call, which you pick up, but the caller remains silent.
 After a while, the caller hangs up.
 This alone can feel threatening to some people.
 What if additionally you were woken up by the call in the middle of the night and later you learned that everything you said on phone was recorded, shared with third parties, and published?
@@ -167,7 +168,6 @@ The fact that the recordings contain ringback indicates though that there is a P
 All recordings that were answered by a machine were recordings of human voice, **fax** machines, music, or unknown (machine).
 **Music** contains recordings that contain music for the whole recording.
 **Unknown (machine)** contains recordings of calls that contain electromechanical sound.
-
 
 Recordings of human voice were either **announcements** that announced something (such as number not in use) or asked for input.
 Recordings asking for input were either **test numbers**, **voice mails**, **teleconferencing services** or they could not be identified, thus **unknown (waiting for input)**.
@@ -297,7 +297,7 @@ There were 6 of these.
 What could this be?
 A confirmation message for what?
 
-**Edit 25.6.2021**: I received multiple messages regarding this recording. 
+**Edit 25.6.2021**: I received multiple messages regarding this recording.
 All stated that it is actually saying "Mobile confirmation message for Global Crossing".
 Global Crossing was a telecommunications company that went bankrupt back in 2002 and was acquired by Level 3 Communications.
 Still no clue what the message is for, though.

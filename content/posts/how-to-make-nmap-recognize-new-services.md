@@ -1,5 +1,6 @@
 ---
 title: "How to Make Nmap Recognize New Services"
+subtitle: "Step-by-step instructions for extending nmap service detection capabilities"
 description: "Step-by-step instructions for extending nmap service detection capabilities"
 date: 2024-03-03T16:36:06+02:00
 draft: false

@@ -58,3 +58,17 @@ h4 {
     font-size: 1rem !important;
     color: #444;
 }
+
+/* Subtitle */
+.SubtitleWrapper {
+    display: block;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 1rem;
+}
+
+.Subtitle {
+    font-size: 1.3rem !important;
+    color: #6c757d;
+    font-weight: 200;
+}

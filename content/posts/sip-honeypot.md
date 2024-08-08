@@ -1,7 +1,8 @@
 ---
 title: "What I learned of the VOIP hacker scene by setting up a SIP Honeypot"
+subtitle: "My study of PBX hackers using SIP honeypot"
 date: 2021-04-17T18:58:44+03:00
-description: "Post describing my study of PBX hackers using SIP honeypot."
+description: "Post describing my study of PBX hackers using SIP honeypot"
 tags: [
     "VOIP",
     "honeypot",
@@ -14,13 +15,13 @@ categories: [
 draft: false
 ---
 
-I got interested in telephones and the Voice Over IP (VOIP) scene soon after reading Phil Lapsley's Exploding the phone (2013). 
+I got interested in telephones and the Voice Over IP (VOIP) scene soon after reading Phil Lapsley's Exploding the phone (2013).
 According to the book, there is a whole underground of VOIP hackers.
 I had not come across them while lurking in the information security scene.
 After my interest sparked, I started paying more attention to telephone-related security research.
 
 The podcast Darknet Diaries by Jack Rhysider has a great first episode called The Phreaky World of PBX Hacking.
-This episode describes the modus operandi of Private Branch eXchange (PBX) hackers on a high level while telling the stories of a few convicted PBX hackers. 
+This episode describes the modus operandi of Private Branch eXchange (PBX) hackers on a high level while telling the stories of a few convicted PBX hackers.
 According to the episode, PBX hackers make money by first hacking into PBX's and then placing calls to premium numbers they own.
 
 While at the Finnish hacker conference Disobey back in 2019 I saw a presentation Starting from scratch – Mobile Core Network Honeypot by Ms. Sebeni and Dr. Holtmanns.

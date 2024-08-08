@@ -1,5 +1,6 @@
 ---
-title: "Ripping Off Professional Criminals by Fermenting Onions - Phishing Darknet Users for Bitcoins"
+title: "Ripping Off Professional Criminals by Fermenting Onions"
+subtitle: "Phishing Darknet Users for Bitcoins on large scale using OnionFermenter"
 date: 2023-06-05T18:58:10+03:00
 draft: true
 description: "Writeup of a tool for creating bitcoin stealing phishing clones of onion services on large scale"
