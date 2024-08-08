@@ -102,7 +102,7 @@ Only the account with extension 100 was broken into.
 
 The internal hello-world number at extension 123 was not dialed by any attacker.
 
-##### The most guessed usernames
+### The most guessed usernames
 
 |Username|Number of times guessed|
 |:-:|:-:|
@@ -112,7 +112,7 @@ The internal hello-world number at extension 123 was not dialed by any attacker.
 |11|9582|
 |1111|9444|
 
-##### The most called countries
+### The most called countries
 
 |Prefix code|Country|Number of times called|
 |:-:|:-:|:-:|
@@ -122,7 +122,7 @@ The internal hello-world number at extension 123 was not dialed by any attacker.
 |+64|New Zealand|10578|
 |+46|Sweden|5236|
 
-##### The most used User-Agents
+### The most used User-Agents
 
 |User-Agent|Number|
 |:-:|:-:|

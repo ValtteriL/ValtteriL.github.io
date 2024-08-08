@@ -39,7 +39,6 @@ In late 2017 the author Securiteam has submitted [multiple vulnerabilities](http
 
 Aside from concrete vulnerabilities, GoIP devices are ridden with weak default credentials that users are not forced to change. The weak credentials could most likely be used to gain unauthorized access to the same number of GoIP devices as with the past vulnerabilities (and the new ones disclosed in this blog post).
 
-
 ## Our findings
 
 The firmware version of the GoIP-1 device was GHSFVT-1.1-67-5 M26FBR03A02 RSIM. Before testing, the device was reset to the default configuration, and a static IP was set to the LAN interface. 
