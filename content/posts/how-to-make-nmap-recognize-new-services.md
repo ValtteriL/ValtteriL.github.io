@@ -13,8 +13,6 @@ categories: [
 ]
 ---
 
-## How to Make Nmap Recognize New Services
-
 Nmap has been my favorite hacking tool for years. Its accuracy is unchallenged and it boasts hundreds of scripts that make it vital in every pentest engagement.
 
 Lately, I've been working more on the ICS space, developing a [OPC UA vulnerability scanner](https://opalopc.com). To my dismay, I noticed that Nmap does not recognize OPC UA services. This makes black box security testing of this dominating ICS protocol tricky, as OPC UA server vendors are known to use non-standard ports extensively.

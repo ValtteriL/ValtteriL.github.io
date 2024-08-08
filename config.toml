@@ -55,3 +55,9 @@ copyright = "&copy; Copyright 2024, Valtteri Lehtinen"
   [[params.social]]
     fa_icon = "fas fa-at fa-1x"
     href = "mailto:valtteri@shufflingbytes.com"
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2

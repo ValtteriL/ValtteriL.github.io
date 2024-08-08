@@ -14,8 +14,6 @@ categories: [
 draft: false
 ---
 
-# DNS records of 1% .fi domains exposed through Zone Transfers
-
 DNS Zone Transfer is a mechanism for administrators to replicate DNS datasets across DNS servers. If it is enabled for a DNS nameserver, the nameserver will gladly give all DNS data regarding a domain to anyone who asks. Enabling Zone Transfers will cause an information disclosure and can thus be considered misconfiguration.
 
 I decided to investigate how common this nameserver misconfiguration is by doing a zone transfer query on all .fi domains I know of (in total 330k domains). This post describes the experiment.
@@ -45,13 +43,14 @@ In the light of these results and the minimal effort required to do it, Zone Tra
 ## How to check if your organization is exposed
 
 You can check whether your organization's domain is exposed using the following command (requires dig):
-```
+
+```bash
 DOMAIN=<your domain> && for i in `dig +short NS $DOMAIN`; do dig axfr @"$i" "$DOMAIN"; done
 ```
 
 Output when the domain is not exposed is as follows:
 
-```
+```bash
 DOMAIN=molemmat.fi && for i in `dig +short NS $DOMAIN`; do dig axfr @"$i" "$DOMAIN"; done
 
 ; <<>> DiG 9.16.1-Ubuntu <<>> axfr @ns1.domainhotelli.fi. molemmat.fi
@@ -68,7 +67,7 @@ DOMAIN=molemmat.fi && for i in `dig +short NS $DOMAIN`; do dig axfr @"$i" "$DOMA
 
 If you see an output with a dump of DNS records, such as in the following output, the domain is exposed.
 
-```
+```bash
 DOMAIN=zonetransfer.me && for i in `dig +short NS $DOMAIN`; do dig axfr @"$i" "$DOMAIN"; done
 
 ; <<>> DiG 9.16.1-Ubuntu <<>> axfr @nsztm1.digi.ninja. zonetransfer.me

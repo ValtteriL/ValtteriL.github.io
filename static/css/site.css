@@ -1,0 +1,44 @@
+/* ToC */
+#TableOfContents ul li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#TableOfContents ul li a {
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.TocWrapper {
+    border: .075rem solid #bfbfbf;
+    border-radius: .2rem;
+    padding: 1rem;
+    background-color: #f0f0f0;
+    border-color: #d7d7d7;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.TocWrapper h4 {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 1rem;
+}
+
+.TocWrapper ul {
+    list-style-type: none;
+}
+
+/* Linkable headings */
+h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Figure captions */
+figcaption {
+    font-size: .8rem;
+    color: #6c757d;
+    text-align: center;
+}
