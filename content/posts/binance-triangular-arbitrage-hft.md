@@ -134,23 +134,24 @@ Therefore I rewrote the whole application in C++, which is used also by the soph
 
 At this time, Binance had also made it possible to subscribe to market data through the FIX API.
 Thus, I was able to cut the websocket part altogether and do all latency-sensitive communication over FIX.
-Apart from tidying the codebase, having only a single server to communicate with made latency optimization easier.
 
 C++ being used by others for the same purpose meant that I was able to use the [Quickfix library](https://github.com/quickfix/quickfix) for FIX communication.
-This made FIX comms easy, but the last official release was dated, and available OS package for it in nix was built without SSL support.
-I solved the problem by [packaging it myself](https://github.com/ValtteriL/harjus/blob/c16f033227ebad881a9ef105a8abed009019789b/default.nix#L23).
+This made FIX comms easy, but the last official release was dated, lacking features, and available OS package for it in nix was built without SSL support.
+I solved the problem by [patching and packaging it myself](https://github.com/ValtteriL/harjus/blob/c16f033227ebad881a9ef105a8abed009019789b/default.nix#L23).
 
 ### Optimizations
 
-The possibilities for optimizing are endless.
-To avoid the deepest rabbit holes, I tried to apply the 80/20 principle and apply only the most effective optimizations.
+The possibilities for optimization are endless.
+To avoid the deepest rabbit holes, I decided to apply the 80/20 principle and applied only the optimizations with best ROI.
 
 #### Network
 
-Since I had only a single server to communicate with, I placed my server in the same availability zone.
-The availability zone of Binance's servers is not public knowledge, but I was able to pinpoint the one by [measuring the latency](https://github.com/ValtteriL/harjus/blob/releases/3.1.0/docs/network-performance.md) from all three.
+Since previous versions, I learned that network latency within a region could be further reduced by placing communicating workloads into the same availability zone (AZ).
 
-This brought the latency down to ~0.5ms.
+The AZ of Binance's FIX servers is not public knowledge, but I was able to pinpoint them in `ap-northeast-1a` by [measuring the latency](https://github.com/ValtteriL/harjus/blob/releases/3.1.0/docs/network-performance.md) from all three.
+Mind you, the zone may be different for you because of ID randomization by AWS, and thus you should do the measurement yourself.
+
+This trick brought the latency down to ~0.5ms.
 
 ```text
 Max rtt: 1.009ms | Min rtt: 0.513ms | Avg rtt: 0.552ms
@@ -162,21 +163,36 @@ Nping done: 1 IP address pinged in 99.21 seconds
 
 Using C++ opened a myriad of micro-optimization possibilities in the application.
 
-I implemented the application lock-free, avoided allocation on the hot path, and compiled it along with quickfix using [aggressive optimization options](https://github.com/ValtteriL/harjus/blob/c16f033227ebad881a9ef105a8abed009019789b/default.nix#L11) and removed all [performance affecting binary hardening](https://github.com/ValtteriL/harjus/blob/c16f033227ebad881a9ef105a8abed009019789b/default.nix#L17).
+I implemented the application lock-free, avoided allocation on the hot path, and compiled it along with the patched Quickfix using [aggressive optimization options](https://github.com/ValtteriL/harjus/blob/c16f033227ebad881a9ef105a8abed009019789b/default.nix#L11) and removed all [performance affecting binary hardening](https://github.com/ValtteriL/harjus/blob/c16f033227ebad881a9ef105a8abed009019789b/default.nix#L17).
 
 I also uncontainerized the application.
-It is now deployed as a Nix package.
+It is was deployed as a Nix package.
 
-Finally, I reduced the number of symbols subscribed to.
-This reduced the number of events, and allows operating with fewer threads.
+Finally, I reduced the number of symbols subscribed to, choosing only ones striking balance between having opportunities and not being the worst of the fads.
+This reduced the number of events, and allows operating with fewer FIX sessions.
 
 #### Production server
 
-The production server I optimized by
+The biggest source of latency after the network was the OS.
+Using a general purpose off-the-self OS like AWS Linux 2023 meant that it was not optimized for the workload.
+
+The way to the best network latency would have been to bypass the kernel altogether with DPDK and using a user-space network stack.
+This would have required vast changes to the Quickfix library, and thus I decided to skip that atleast for now.
+
+The lesser way to improved peformance was to tune the OS.
+Marc Richards' [study](https://talawah.io/blog/linux-kernel-vs-dpdk-http-performance-showdown/) shows that through tuning, one may be looking at only 51% performance disadvantage to DPDK.
+Without optimizations, the disadvantage could reportedly be many times that.
+
+I applied the following optimizations:
 
 1. RT kernel
 2. Tuned profile
-3. Ethtool
+3. Disabling Iptables
+4. Disable interrupt modification and dynamic interrupt moderation
+5. Disable speculative execution mitigations
+6. Use
+
+And others mainly applied by Marc in his post, [recommended by AWS](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ena-improve-network-latency-linux.html), or included in the default Tuned profiles for latency and realtime systems.
 
 ### Results
 
@@ -185,6 +201,8 @@ As an acid test I deployed Harjus to testnet on the production server, and left 
 The result was $60k in profit.
 
 Calculating trading paths took now 3 seconds. The elixir implementation took over 40.
+
+The C++ version was able to handle
 
 ## Why is it not profitable?
 
