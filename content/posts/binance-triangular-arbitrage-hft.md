@@ -47,13 +47,19 @@ In 2018 there were [14.55% opportunities that lasted over 3 seconds](https://ste
 
 As markets get more efficient, there are fewer and smaller opportunities, and they last shorther time.
 I'm sure the market efficiency has increased dramatically in the last 8 years, especially in Binance as it's the market leader.
-At the time of writing, [an online arbitrage scanner](over 1%) reported last opportunity over 1% on Binance 10 months ago.
+At the time of writing, [an online arbitrage scanner](https://www.octobot.cloud/tools/triangular-arbitrage-crypto) reported last opportunity over 1% on Binance 10 months ago.
 
 Even if I was looking at crypto, the other arbitrageurs looking to exploit these same opportunities are not only hobbyists.
 Some sophisticated trading firms from the traditional finance, such as Jump Trading and Jane Street, also participate.
 
-Given the increasngly efficient market and participant list I knew that the bot is extremely latency sensitive, and even if successful, there may not be much juice left.
+Given the hypercompetitiveness, I knew that the bot is extremely latency sensitive, and even if successful, there may not be much juice left.
 I still wanted to give it a shot, if nothing else than a learning experience.
+
+### START TODO: ANALYSIS OF OPPORTUNITIES
+
+TODO
+
+### END TODO: ANALYSIS OF OPPORTUNITIES
 
 I named the bot Harjus after my favorite fly fishing target, crayling.
 Crayling lives in a rapid (the exchange) and has its own territory (the universe of trading symbols) where it hunts for small bugs (arbitrage opportunities).
@@ -183,30 +189,68 @@ The lesser way to improved peformance was to tune the OS.
 Marc Richards' [study](https://talawah.io/blog/linux-kernel-vs-dpdk-http-performance-showdown/) shows that through tuning, one may be looking at only 51% performance disadvantage to DPDK.
 Without optimizations, the disadvantage could reportedly be many times that.
 
-I applied the following optimizations:
+I applied the following optimizations to the OS:
 
 1. RT kernel
-2. Tuned profile
+2. Busy socket polling
 3. Disabling Iptables
-4. Disable interrupt modification and dynamic interrupt moderation
-5. Disable speculative execution mitigations
-6. Use
+4. Disabling interrupt modification and dynamic interrupt moderation
+5. Disabling speculative execution mitigations
 
 And others mainly applied by Marc in his post, [recommended by AWS](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ena-improve-network-latency-linux.html), or included in the default Tuned profiles for latency and realtime systems.
+You can find my [tuned profile](https://github.com/ValtteriL/harjus/blob/releases/3.2.0/deploy/playbooks/files/tuned.conf) here.
 
 ### Results
 
-In testnet Harjus caught now 30/31 of detected opportunities.
+This version was clearly the fastest.
+As a simple comparison, the trading path calculation took now 3 seconds, when in previous version it took over 40.
+
+In testnet Harjus caught 30/31 of detected opportunities.
 As an acid test I deployed Harjus to testnet on the production server, and left it running for 48 hours.
 The result was $60k in profit.
 
-Calculating trading paths took now 3 seconds. The elixir implementation took over 40.
+In production, Harjus handled updates from all trading symbols with ease.
+However, almost all of its executions failed.
+It sometimes succeeded in some of the trades, but at least one of its orders would expire without a fill.
+This resulted in unwanted exposure to the asset it happened to end up with, which was invariably fartcoin tier volatility nightmares.
+It turned out to be hard to get rid of the exposure without manual intervention and taking a loss, as arbitrage opportunities in these assets were a lot more rare than in bitcoin.
 
-The C++ version was able to handle
+In an attempt to resolve the exposure problem and further reduce latency, I limited the assets it would trade to a select few.
+These assets were fiat, had high volume at the time, or were stablecoins.
+I tried to strike balance between subjective stability and the number of arbitrage opportunities involving the assets.
+This resulted in focusing on [these 26 assets](https://github.com/ValtteriL/harjus/blob/69adb62151f8ab44d793258ad5f7a54182c80ed4/deploy/playbooks/group_vars/harjus_instance/prod.yml#L24), that at the time made up 93 trading symbols and form 804 different arbitrage paths.
+
+**TODO: plot of analysis**
+
+Running Harjus for 69 hours with the focused set of assets resulted in 156 opportunities, out of which only a single was successufully executed.
+With my commission percentage, the total profit from all these opportunities was $176,35.
+The successful execution was worth $0.13.
+
+The opportunities detected are lucrative enough to turn profit, provided enough of them are captured.
+Currently over 99% were not captured.
+Assuming the failed executions result in no loss, this kind of trading profit is not even close to breaking even.
 
 ## Why is it not profitable?
 
+Someone is faster.
+
+An arbitrage execution fails when an order submitted expires without a fill.
+So either the order previously observed on the book was already filled, or it was cancelled.
+In both cases there is someone faster than us.
+
+They might be faster thanks to for instance:
+
+1. Luck
+2. Superiority
+3.
+
+The source of their speed
+
+Fee tiers
+
 Apparently Binance does not offer colocation through cluster placement groups that would make t ...
+
+TCP fundamentally bad for low-latency, but all
 
 ## Conclusion
 
