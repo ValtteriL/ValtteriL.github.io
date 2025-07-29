@@ -135,7 +135,7 @@ In production, it ran to the same problem as the earlier release, but stayed ali
 
 ## Going fully native (releases 3.x.y)
 
-After two half-measures, it was time for a full measure.
+After two half-measures, it was time to be pragmatic.
 Therefore I rewrote the whole application in C++, which is used also by the sophisticated actors.
 
 At this time, Binance had also made it possible to subscribe to market data through the FIX API.
@@ -230,28 +230,38 @@ The opportunities detected are lucrative enough to turn profit, provided enough 
 Currently over 99% were not captured.
 Assuming the failed executions result in no loss, this kind of trading profit is not even close to breaking even.
 
+The number of opportunities observed extrapolates to just $1840/month.
+That kind of money should not interest the big guns.
+However, this is only the arbitage opportunities that are profitable with my commission fee level (0.075%).
+A big-time trader is likely in Binance's VIP program that can bring the taker fee down to 0.01725%.
+This means the opportunities visible to me are merely remnants that the sharks weren't fast enough to capture.
+
 ## Why is it not profitable?
 
 Someone is faster.
 
-An arbitrage execution fails when an order submitted expires without a fill.
+An arbitrage execution fails when a submitted order expires without a fill.
 So either the order previously observed on the book was already filled, or it was cancelled.
 In both cases there is someone faster than us.
 
-They might be faster thanks to for instance:
+They might be faster because they have implemented the optimizations I didn't.
+Network-wise I couldn't think of ways to improve, and apparently colocation is not available.
+An AWS networking guru might still be able to squeeze some latency out.
+On the host, the clear path to reduced latency was DPDK and/or a combination of OS tweaks.
+An obvious improvement would also be to use a bare metal server instead of a VM.
 
-1. Luck
-2. Superiority
-3.
-
-The source of their speed
-
-Fee tiers
-
-Apparently Binance does not offer colocation through cluster placement groups that would make t ...
-
-TCP fundamentally bad for low-latency, but all
+They could also know of some quirks of the exchange I don't.
+One possibility for such quirk is the sending order of market data updates.
+As the updates flow through TCP, everyone gets their updates at different times.
+The sending order matters, and thus might be exploitable if not randomized.
+I expect at least Binance's own trading division to be aware of all exploitable quirks, if such exist.
+**TODO: who**
 
 ## Conclusion
 
-### Learnings
+Seemingly simple trading strategy
+
+Even though I did not yet reach the money printing phase, this odyssey of over 1300 commits gave me the excuse to learn a bunch of new things like Elixir, Nix, and C++.
+It also left me with immense interest in engineering in financial markets.
+
+If you intended to try similar arbitrage, I hope my description either lighted lightbulbs in your head or got you to reconsider.
