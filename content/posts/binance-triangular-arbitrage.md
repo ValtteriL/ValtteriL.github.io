@@ -59,6 +59,8 @@ I still wanted to give it a shot, if nothing else than a learning experience.
 
 TODO
 
+Capital reqs?
+
 ### END TODO: ANALYSIS OF OPPORTUNITIES
 
 I named the bot Harjus after my favorite fly fishing target, crayling.
@@ -220,7 +222,7 @@ These assets were fiat, had high volume at the time, or were stablecoins.
 I tried to strike balance between subjective stability and the number of arbitrage opportunities involving the assets.
 This resulted in focusing on [these 26 assets](https://github.com/ValtteriL/harjus/blob/69adb62151f8ab44d793258ad5f7a54182c80ed4/deploy/playbooks/group_vars/harjus_instance/prod.yml#L24), that at the time made up 93 trading symbols and form 804 different arbitrage paths.
 
-**TODO: plot of analysis**
+{{< figure src="/images/binance-triangular-arbitrage/triarb-opportunity-count-by-asset-over-10.png" alt="Bar plot of arbitrage opportunity count by asset where count > 10" caption="Assets with most arbitrage opportunities between Jun 12th and 13th 2025" >}}
 
 Running Harjus for 69 hours with the focused set of assets resulted in 156 opportunities, out of which only a single was successufully executed.
 With my commission percentage, the total profit from all these opportunities was $176,35.
@@ -254,14 +256,15 @@ They could also know of some quirks of the exchange I don't.
 One possibility for such quirk is the sending order of market data updates.
 As the updates flow through TCP, everyone gets their updates at different times.
 The sending order matters, and thus might be exploitable if not randomized.
-I expect at least Binance's own trading division to be aware of all exploitable quirks, if such exist.
-**TODO: who**
+I expect at least Binance's own trading divisions (Sigma Chain, Merit Peak Limited, possibly others) to be aware of all exploitable quirks, if such exist.
 
 ## Conclusion
 
-Seemingly simple trading strategy
+Running one of the simplest high-frequency liquidity taking strategies on the most liquid crypto exchange and turning a profit is very hard.
+It may be doable by a single person, provided the plaing field is level, but certainly requires hyperfocus.
+The money awaiting is not earth staggering expecially without Binance VIP.
 
-Even though I did not yet reach the money printing phase, this odyssey of over 1300 commits gave me the excuse to learn a bunch of new things like Elixir, Nix, and C++.
-It also left me with immense interest in engineering in financial markets.
+Even though I did not reach the money printing phase, this odyssey of over 1300 commits was not for nothing.
+It gave me the excuse to learn a bunch of new things like Elixir, Nix, and C++, and left me with immense interest in and appreciation of financial engineering.
 
-If you intended to try similar arbitrage, I hope my description either lighted lightbulbs in your head or got you to reconsider.
+If you intend to try similar arbitrage, I hope my experience either lighted lightbulbs in your head or got you to reconsider.
