@@ -15,6 +15,8 @@ categories: [
 draft: false
 ---
 
+{{< figure src="/images/binance-triangular-arbitrage/harjus-logo.png" alt="Harjus logo" >}}
+
 The idea of turning on a program and just letting it rip while collecting (riskless) money is compelling.
 No sales or marketing, or other things I as an engineer like to shy away from doing - just enjoyable tinkering with models and infra.
 That's literally printing money.
