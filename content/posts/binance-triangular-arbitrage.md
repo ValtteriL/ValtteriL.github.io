@@ -81,7 +81,7 @@ Thorough all revisions, Harjus works roughly as follows:
 5. If profitable path detected, send orders for the trades (Limit order at the calculated price, Fill Or Kill)
 6. On received execution reports, update balance
 
-## Naive first attempt (releases 1.x.y)
+## Naive first attempt (releases 1.0.x)
 
 Surely no serious trader with a manager will risk ending up holding a bag of fartcoin, right?
 This intuition of mine led me to believe I have an edge if I just look for opportunities spanning any coin available.
@@ -95,7 +95,7 @@ Luckily that was easy in Elixir.
 The fastest way to submit trades was [though the FIX API](https://developers.binance.com/docs/binance-spot-api-docs/fix-api#newordersingle-d).
 I couldn't afford compromising on this, so I had to develop a FIX client in Elixir covering just enough of the protocol to make it work.
 
-{{< figure src="/images/binance-triangular-arbitrage/harjus-1-architecture.png" alt="Harjus 1 architecture diagram" caption="Mixed level architecture of the release" >}}
+{{< figure src="/images/binance-triangular-arbitrage/harjus-1-architecture.png" alt="Harjus 1 architecture diagram" caption="Mixed level architecture of the 1.0.x release" >}}
 
 ### Network optimization
 
@@ -125,7 +125,7 @@ After running for a while, it would crash when memory ran out.
 Despite implementing all optimizations I could think of, this version did not fly.
 Elixir just doesn't seem equipped with dealing with such volumes of events that each demand many high-precision calculations.
 
-## Speeding up with ports (releases 2.x.y)
+## Speeding up with ports (releases 1.1.x)
 
 To mitigate the speed issue, I carved out the computationally expensive part (calculating arbitrage opportunities) of the program into [a port](https://hexdocs.pm/elixir/Port.html) that I implemented in C++.
 I first considered making a [Native Implemented Function (NIF)](https://www.erlang.org/doc/system/nif.html) out of it instead, but the port seemed much more approachable.
@@ -133,13 +133,15 @@ I first considered making a [Native Implemented Function (NIF)](https://www.erla
 The bad thing with the choice was that I had to format&parse the data passed between elixir and the C++ programs.
 I opted for JSON for simplicity, but it added overhead to the operation.
 
+{{< figure src="/images/binance-triangular-arbitrage/harjus-1-1-architecture.png" alt="Harjus 1.1.x architecture diagram" caption="Mixed level architecture of the 1.1.x release" >}}
+
 ### Results
 
 In testnet, Harjus could now exploit ~11/12 of detected opportunities.
 
 In production, it ran to the same problem as the earlier release, but stayed alive longer.
 
-## Going fully native (releases 3.x.y)
+## Going fully native (releases 2.x.y onwards)
 
 After two half-measures, it was time to be pragmatic.
 Therefore I rewrote the whole application in C++, which is used also by the sophisticated actors.
@@ -151,7 +153,7 @@ C++ being used by others for the same purpose meant that I was able to use the [
 This made FIX comms easy, but the last official release was dated, lacking features, and available OS package for it in nix was built without SSL support.
 I solved the problem by [patching and packaging it myself](https://github.com/ValtteriL/harjus/blob/c16f033227ebad881a9ef105a8abed009019789b/default.nix#L23).
 
-{{< figure src="/images/binance-triangular-arbitrage/harjus-3-architecture.png" alt="Harjus 3 architecture diagram" caption="Mixed level architecture of the release" >}}
+{{< figure src="/images/binance-triangular-arbitrage/harjus-3-architecture.png" alt="Harjus 3 architecture diagram" caption="Mixed level architecture of the 3.x.y release" >}}
 
 ### Optimizations
 
