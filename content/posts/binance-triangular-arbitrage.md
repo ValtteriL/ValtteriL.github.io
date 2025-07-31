@@ -57,13 +57,10 @@ Some sophisticated trading firms from the traditional finance, such as Jump Trad
 Given the hypercompetitiveness, I knew that the bot is extremely latency sensitive, and even if successful, there may not be much juice left.
 I still wanted to give it a shot, if nothing else than a learning experience.
 
-### START TODO: ANALYSIS OF OPPORTUNITIES
-
-TODO
-
-Capital reqs?
-
-### END TODO: ANALYSIS OF OPPORTUNITIES
+Before starting, I recorded all profitable arbitrage opportunities for my fee level among all assets on Binance Spot market.
+In 24h I got in total 3966 opportunities, which resulted in a profit of $4419,78 if exploited.
+Bitcoin had the most opportunities (1292), with total profit of $229,86, and it required holding only $1279,90 in BTC to be able to capture them.
+On Finnish standards this signaled the existence of a nice payday, so I decided to go ahead with the implementation.
 
 I named the bot Harjus after my favorite fly fishing target, crayling.
 Crayling lives in a rapid (the exchange) and has its own territory (the universe of trading symbols) where it hunts for small bugs (arbitrage opportunities).
@@ -225,7 +222,7 @@ It sometimes succeeded in some of the trades, but at least one of its orders wou
 This resulted in unwanted exposure to the asset it happened to end up with, which was invariably fartcoin tier volatility nightmares.
 It turned out to be hard to get rid of the exposure without manual intervention and taking a loss, as arbitrage opportunities in these assets were a lot more rare than in bitcoin.
 
-In an attempt to resolve the exposure problem and further reduce latency, I limited the assets it would trade to a select few.
+In an attempt to resolve the exposure problem and further reduce latency, I limited the assets it would trade to a select few at the expense of the total number of opportunities.
 These assets were fiat, had high volume at the time, or were stablecoins.
 I tried to strike balance between subjective stability and the number of arbitrage opportunities involving the assets.
 This resulted in focusing on [these 26 assets](https://github.com/ValtteriL/harjus/blob/69adb62151f8ab44d793258ad5f7a54182c80ed4/deploy/playbooks/group_vars/harjus_instance/prod.yml#L24), that at the time made up 93 trading symbols and form 804 different arbitrage paths.
@@ -270,7 +267,7 @@ I expect at least Binance's own trading divisions (Sigma Chain, Merit Peak Limit
 
 Running one of the simplest high-frequency liquidity taking strategies on the most liquid crypto exchange and turning a profit is very hard.
 It may be doable by a single person, provided the plaing field is level, but certainly requires hyperfocus.
-The money awaiting is not earth staggering expecially without Binance VIP.
+The money awaiting is not earth staggering especially without Binance VIP or if the assets traded are limited.
 
 Even though I did not reach the money printing phase, this odyssey of over 1300 commits was not for nothing.
 It gave me the excuse to learn a bunch of new things like Elixir, Nix, and C++, and left me with immense interest in and appreciation of financial engineering.
