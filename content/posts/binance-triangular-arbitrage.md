@@ -263,6 +263,11 @@ As the updates flow through TCP, everyone gets their updates at different times.
 The sending order matters, and thus might be exploitable if not randomized.
 I expect at least Binance's own trading divisions (Sigma Chain, Merit Peak Limited, possibly others) to be aware of all exploitable quirks, if such exist.
 
+## Demo
+
+Exploiting triangular arbitrage opportunities in Binance testnet
+[![asciicast](https://asciinema.org/a/730934.svg)](https://asciinema.org/a/730934)
+
 ## Conclusion
 
 Running one of the simplest high-frequency liquidity taking strategies on the most liquid crypto exchange and turning a profit is very hard.
