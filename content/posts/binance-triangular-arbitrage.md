@@ -95,6 +95,8 @@ Luckily that was easy in Elixir.
 The fastest way to submit trades was [though the FIX API](https://developers.binance.com/docs/binance-spot-api-docs/fix-api#newordersingle-d).
 I couldn't afford compromising on this, so I had to develop a FIX client in Elixir covering just enough of the protocol to make it work.
 
+{{< figure src="/images/binance-triangular-arbitrage/harjus-1-architecture.png" alt="Harjus 1 architecture diagram" caption="Mixed level architecture of the release" >}}
+
 ### Network optimization
 
 By placing my deployment server as close to Binance servers as possible and ensuring high-speed connectivity, I could shave the most out of the latency.
@@ -121,7 +123,7 @@ CPUs were constantly at 100%, and the backlog of unprocessed market updates was 
 After running for a while, it would crash when memory ran out.
 
 Despite implementing all optimizations I could think of, this version did not fly.
-Elixir just isn't equipped with dealing with such volumes of events that each demand many high-precision calculations.
+Elixir just doesn't seem equipped with dealing with such volumes of events that each demand many high-precision calculations.
 
 ## Speeding up with ports (releases 2.x.y)
 
