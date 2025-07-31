@@ -2,7 +2,7 @@
 title: "Harjus: Triangular Arbitrage Bot for Binance"
 subtitle: "My journey chasing riskless profits in the world’s most liquid crypto exchange at high speed with a grayling"
 date: 2025-07-21T09:14:28+03:00
-description: "TODO"
+description: "My journey chasing riskless profits in the world’s most liquid crypto exchange at high speed with a grayling"
 tags: [
     "binance",
     "trading",
