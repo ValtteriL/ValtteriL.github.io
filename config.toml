@@ -5,7 +5,7 @@ theme = "devise"
 enableRobotsTXT = true
 relativeURLs = true
 enableEmoji = true
-copyright = "&copy; Copyright 2024, Valtteri Lehtinen"
+copyright = "&copy; Copyright 2025, Valtteri Lehtinen"
 
 
 # Main menu items

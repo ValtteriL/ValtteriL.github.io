@@ -31,7 +31,12 @@
 }
 
 /* Linkable headings */
-h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
+h1>a,
+h2>a,
+h3>a,
+h4>a,
+h5>a,
+h6>a {
     text-decoration: none;
     color: inherit;
 }
@@ -43,17 +48,28 @@ figcaption {
     text-align: center;
 }
 
+/* center imgs inside figure */
+figure img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 /* Heading sizes */
 h1 {
     font-size: 2.2rem !important;
 }
+
 h2 {
     font-size: 1.9rem !important;
 }
+
 h3 {
     font-size: 1.5rem !important;
     color: #333;
 }
+
 h4 {
     font-size: 1rem !important;
     color: #444;
