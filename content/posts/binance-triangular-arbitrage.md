@@ -149,6 +149,8 @@ C++ being used by others for the same purpose meant that I was able to use the [
 This made FIX comms easy, but the last official release was dated, lacking features, and available OS package for it in nix was built without SSL support.
 I solved the problem by [patching and packaging it myself](https://github.com/ValtteriL/harjus/blob/c16f033227ebad881a9ef105a8abed009019789b/default.nix#L23).
 
+{{< figure src="/images/binance-triangular-arbitrage/harjus-3-architecture.png" alt="Harjus 3 architecture diagram" caption="Mixed level architecture of the release" >}}
+
 ### Optimizations
 
 The possibilities for optimization are endless.
