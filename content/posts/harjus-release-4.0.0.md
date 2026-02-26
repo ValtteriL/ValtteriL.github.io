@@ -47,6 +47,8 @@ Instead, I had to switch to Conan for managing libraries and recreate the develo
 Finding the availability zone closest to the Binance servers a recurring problem many faced.
 I therefore added a utility and [instructions](https://github.com/ValtteriL/harjus/blob/releases/4.0.0/docs/choose-optimal-az.md) for automating the required measurements.
 
+{{< figure src="/images/harjus-release-4.0.0/harjus-v4-diagram.svg" alt="High level diagram of Harjus deployment in AWS" caption="High level diagram of Harjus deployment in AWS" >}}
+
 ## Latency improvement
 
 To measure how v4 compares to the previous version (3.2.0), I created a simple FIX server that measures the tick-to-trade latency from its clients.
