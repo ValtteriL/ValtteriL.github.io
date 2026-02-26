@@ -54,19 +54,12 @@ I then ran both versions against it and collected the results.
 
 The raw results for 1000 samples were as follows:
 
-```text
-Version 4.0.0
-  Avg:    1047.65 µs
-  Median: 1008.74 µs
-  Min:    873.67 µs
-  Max:    3834.48 µs
-
-Version 3.2.0
-  Avg:    1165.97 µs
-  Median: 1144.35 µs
-  Min:    956.00 µs
-  Max:    3836.29 µs
-```
+| Measure     | v3.2.0  | v4.0.0  |  Change |
+| :---------- | :------ | :------ | ------: |
+| Avg (µs)    | 1165.97 | 1047.65 | -118.32 |
+| Median (µs) | 1144.35 | 1008.74 | -135.61 |
+| Min (µs)    | 956.00  | 873.67  |  -82,33 |
+| Max (µs)    | 3836.29 | 3834.48 |   -1.81 |
 
 Harjus v4 thus beats the previous version clearly on all measures.
 On average, it has 10% (0.1ms) lower tick-to-trade latency.
@@ -76,14 +69,26 @@ It is interesting how the latency distribution stays similar on both versions.
 Bypassing the kernel is supposed to offer predictable performance, which led me to expect a lot lower spread.
 This can be caused by my imperfect measurement setup (the FIX server used regular kernel-provided TCP/IP stack).
 
-## Trading results
+## Results
+
+I ran Harjus for 48 hours between 5th and 7th February.
+To get as many opportunities as possible, even if unprofitable, I configured my commission to zero.
+
+I focused on 273 assets, which formed 4500 potential triangular arbitrage paths.
+The paths consisted of 665 different trading pairs. The focused assets were as follows:
+
+```ini
+ASSETS="A,A2Z,AAVE,ACH,ACT,ACX,ADA,AEVO,AIXBT,ALGO,ALLO,ALT,ANIME,APE,API3,APT,AR,ARB,ARKM,ASTER,AT,ATOM,AUCTION,AVAX,AVNT,AXS,BABY,BANANA,BANK,BARD,BB,BCH,BEAMX,BERA,BIGTIME,BIO,BLUR,BMT,BNB,BOME,BONK,BREV,BTC,C,CAKE,CATI,CETUS,CFX,CGTP,CHESS,CHZ,CKB,COMP,COOKIE,COTI,COW,CRV,CVC,CVX,CYBER,DASH,DF,DOGE,DOGS,DOLO,DOT,DYDX,DYM,EDEN,EGLD,EIGEN,ENA,ENJ,ENS,ENSO,EPIC,ERA,ETC,ETH,ETHFI,EUL,EUR,EURI,F,FET,FF,FIL,FLOKI,FLUX,FOGO,FORM,FUN,GALA,GIGGLE,GMT,GMX,GPS,GRT,GUN,HAEDAL,HBAR,HEI,HEMI,HIVE,HMSTR,HOLO,HOME,HUMA,HYPER,ICP,IDEX,ILV,IMX,INIT,INJ,IO,IOTA,JTO,JUP,JUV,KAIA,KAITO,KERNEL,KITE,KMNO,LA,LAYER,LDO,LINEA,LINK,LISTA,LPT,LSK,LTC,LUNA,LUNC,MAGIC,MANTA,MASK,MAV,ME,MEME,MET,MINA,MIRA,MITO,MMT,MORPHO,MOVE,MUBARAK,NEAR,NEIRO,NEO,NEWT,NIL,NMR,NOM,NOT,NXPC,OG,OM,ONDO,ONT,OP,OPEN,ORCA,ORDI,OSMO,PARTI,PENDLE,PENGU,PEOPLE,PEPE,PHA,PIXEL,PLUME,PNUT,POL,PROVE,PUMP,PUNDIX,PYTH,QNT,QTUM,RARE,RAY,RED,RENDER,RESOLV,REZ,ROSE,RPL,RSR,RUNE,RVN,S,SAGA,SAHARA,SAND,SAPIEN,SEI,SENT,SHELL,SHIB,SIGN,SKL,SKY,SNX,SOL,SOLV,SOMI,SOPH,SPK,SSV,STEEM,STO,STRK,STX,SUI,SUSHI,SXT,SYN,SYRUP,T,TAO,THE,THETA,TIA,TLM,TNSR,TON,TOWNS,TRB,TREE,TRUMP,TRX,TST,TURBO,TURTLE,TUT,TWT,UMA,UNI,USDC,USUAL,UTK,VANA,VANRY,VELODROME,VET,VIRTUAL,W,WAL,WBTC,WCT,WIF,WLD,WLFI,XAI,XLM,XPL,XRP,XTZ,XVG,YB,YGG,ZBT,ZEC,ZEN,ZK,ZKC,ZKP,ZRO"
+```
+
+There were not a single opportunity. Zero. Thus, I was unable to see if someone was still faster.
 
 ## Why is it still not profitable?
 
 Someone is still faster. But also because the EU protects my money from crypto scams.
 
 As an EU citizen I am unable to trade USDT on Binance.
-While I was busy with the v4, Binance also restricted me from trading TRY (Turkish Lira).
+While I was busy with the v4, [Binance also removed TRY](https://www.binance.com/en/square/post/10-30-2025-binance-to-implement-changes-for-turkish-lira-trading-pairs-31714427466017) (Turkish Lira) from Binance.com.
 These two coins [contained the most arbitrage opportunities in 2025](../binance-triangular-arbitrage#results-2) after BTC.
 This means I have a lot fewer arbitrage opportunities to exploit.
 
