@@ -1,3 +1,22 @@
 {{ define "main" }}
-    {{- partial "category-posts.html" . -}}
+    <div class="pl-sm-4 ml-sm-5 pt-2">
+        <div class="row">
+            <div class="col-12">
+                {{ $pages := .Pages }}
+                {{ range $pages.GroupByDate "2006" }}
+                    <div class="pb-3">
+                        <h5><span class="badge category">{{ .Key }}</span></h5>
+                        <ul class="list-unstyled">
+                            {{ range .Pages }}
+                                <li>
+                                    {{ .Date.Format "Jan 2" }}
+                                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                                </li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
 {{ end }}
