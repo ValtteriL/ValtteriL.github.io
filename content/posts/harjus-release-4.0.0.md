@@ -73,8 +73,9 @@ This can be caused by my imperfect measurement setup (the FIX server used regula
 
 ## Results
 
-I ran Harjus for 48 hours between 5th and 7th February.
-To get as many opportunities as possible, even if unprofitable, I configured my commission to zero.
+I ran Harjus for 74 hours between Feb 27th and Mar 1st.
+When starting, I had $100 BNB, $250 in BTC, and $600 in USDC.
+My commission percentage was 0.075% (the lowest Binance tier + BNB discount).
 
 I focused on 273 assets, which formed 4500 potential triangular arbitrage paths.
 The paths consisted of 665 different trading pairs. The focused assets were as follows:
@@ -83,23 +84,40 @@ The paths consisted of 665 different trading pairs. The focused assets were as f
 ASSETS="A,A2Z,AAVE,ACH,ACT,ACX,ADA,AEVO,AIXBT,ALGO,ALLO,ALT,ANIME,APE,API3,APT,AR,ARB,ARKM,ASTER,AT,ATOM,AUCTION,AVAX,AVNT,AXS,BABY,BANANA,BANK,BARD,BB,BCH,BEAMX,BERA,BIGTIME,BIO,BLUR,BMT,BNB,BOME,BONK,BREV,BTC,C,CAKE,CATI,CETUS,CFX,CGTP,CHESS,CHZ,CKB,COMP,COOKIE,COTI,COW,CRV,CVC,CVX,CYBER,DASH,DF,DOGE,DOGS,DOLO,DOT,DYDX,DYM,EDEN,EGLD,EIGEN,ENA,ENJ,ENS,ENSO,EPIC,ERA,ETC,ETH,ETHFI,EUL,EUR,EURI,F,FET,FF,FIL,FLOKI,FLUX,FOGO,FORM,FUN,GALA,GIGGLE,GMT,GMX,GPS,GRT,GUN,HAEDAL,HBAR,HEI,HEMI,HIVE,HMSTR,HOLO,HOME,HUMA,HYPER,ICP,IDEX,ILV,IMX,INIT,INJ,IO,IOTA,JTO,JUP,JUV,KAIA,KAITO,KERNEL,KITE,KMNO,LA,LAYER,LDO,LINEA,LINK,LISTA,LPT,LSK,LTC,LUNA,LUNC,MAGIC,MANTA,MASK,MAV,ME,MEME,MET,MINA,MIRA,MITO,MMT,MORPHO,MOVE,MUBARAK,NEAR,NEIRO,NEO,NEWT,NIL,NMR,NOM,NOT,NXPC,OG,OM,ONDO,ONT,OP,OPEN,ORCA,ORDI,OSMO,PARTI,PENDLE,PENGU,PEOPLE,PEPE,PHA,PIXEL,PLUME,PNUT,POL,PROVE,PUMP,PUNDIX,PYTH,QNT,QTUM,RARE,RAY,RED,RENDER,RESOLV,REZ,ROSE,RPL,RSR,RUNE,RVN,S,SAGA,SAHARA,SAND,SAPIEN,SEI,SENT,SHELL,SHIB,SIGN,SKL,SKY,SNX,SOL,SOLV,SOMI,SOPH,SPK,SSV,STEEM,STO,STRK,STX,SUI,SUSHI,SXT,SYN,SYRUP,T,TAO,THE,THETA,TIA,TLM,TNSR,TON,TOWNS,TRB,TREE,TRUMP,TRX,TST,TURBO,TURTLE,TUT,TWT,UMA,UNI,USDC,USUAL,UTK,VANA,VANRY,VELODROME,VET,VIRTUAL,W,WAL,WBTC,WCT,WIF,WLD,WLFI,XAI,XLM,XPL,XRP,XTZ,XVG,YB,YGG,ZBT,ZEC,ZEN,ZK,ZKC,ZKP,ZRO"
 ```
 
-There were not a single opportunity. Zero. Thus, I was unable to see if someone was still faster.
+The experiment resulted in a total of 84 opportunities with a total profit of 6.07788e-05 BTC ($4,18), out of which none were successfully executed.
+All of the attempts failed in order expiry.
+18 executions resulted in some trades being filled.
+24 trades were filled in total.
 
-## Why is it still not profitable?
+Afterwards my assets had been reallocated.
+I was holding $600 in ADA, $235 in PENDLE, $100 in FET $15 in TRX, $10 in APT, and finally $7 in BTC.
+{{< figure src="/images/harjus-release-4.0.0/binance-balance-after-running-trading-bot.png" alt="Balance at the end of trading session" caption="Balance at the end of trading session" >}}
 
-Someone is still faster. But also because the EU protects my money from crypto scams.
+See [the raw log of the deployment](https://gist.github.com/ValtteriL/b438a17c3c0eb61d4000ce93e9f1e39c)
+
+## Why the poor results?
+
+Why are all executions failing in expiry?
+Why are there only $4.18 available to be arbed out, when last year there were $176,35?
+
+The first is because either the orders are cancelled by the other party, or someone else fills them before I do.
+In short, someone is being faster.
+
+The second is because the EU protects my money from crypto scams.
 
 As an EU citizen I am unable to trade USDT on Binance.
 While I was busy with the v4, [Binance also removed TRY](https://www.binance.com/en/square/post/10-30-2025-binance-to-implement-changes-for-turkish-lira-trading-pairs-31714427466017) (Turkish Lira) from Binance.com.
 These two coins [contained the most arbitrage opportunities in 2025](../binance-triangular-arbitrage#results-2) after BTC.
 This means I have a lot fewer arbitrage opportunities to exploit.
 
-When opportunities emerge, I'm unable to exploit them before someone else does or the orders I'm trying to fill get cancelled.
-Thus, someone else is faster.
+The number of opportunities varies daily, and I might have gotten unlucky, too.
+The competition may also have gotten better.
+
+## How can someone be faster?
 
 Aside from the leftover reasons I spitballed someone could be faster in the previous writeup,
 
-Binance also introduced the [Simple Binary Encoding SBE](https://developers.binance.com/docs/binance-spot-api-docs/fix-api#fix-sbe) in its FIX API.
+Binance introduced the [Simple Binary Encoding SBE](https://developers.binance.com/docs/binance-spot-api-docs/fix-api#fix-sbe) in its FIX API.
 SBE is far superior to the standard FIX encoding when it comes to latency.
 The effect should be a lot less than what kernel bypass offers vs regular kernel network stack.
 Still, Harjus does not use it, and is thus at a disadvantage.
