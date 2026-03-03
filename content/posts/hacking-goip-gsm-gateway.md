@@ -3,28 +3,22 @@ title: "GoIP-1 GSM gateway could be harnessed for phone fraud by hackers"
 subtitle: "GoIP-1 contains vulnerabilities that allow hackers to send SMS messages and make calls for free"
 date: 2022-02-15T20:25:20+02:00
 description: "GoIP-1 GSM gateway contains vulnerabilities that allow hackers to send SMS messages and make calls for free"
-tags: [
-    "VOIP",
-    "SIP",
-    "telephony",
-]
-categories: [
-    "Research",
-]
+tags: ["VOIP", "SIP", "telephony"]
+categories: ["Research"]
 draft: false
 ---
 
 While listening to [Risky Business ep. 642](https://risky.biz/RB642/), I learned about [a botnet that has been abusing a vulnerability in TP-Link routers to provide SMS messaging as a service for years](https://vblocalhost.com/presentations/from-match-fixing-to-data-exfiltration-a-story-of-messaging-as-a-service-maas/). The exploited vulnerability allowed the botnet operator to send SMS messages on someone else's bill and the operator sold this capability for others, including other criminals. Similar services are no doubt used when you receive smishing messages notifying you about false packages stuck in customs. It is not clear how much this specific botnet operator is making, but there is demand for sure.
 
-The relatively cheap GoIP-1 GSM gateway device I bought specifically for [my wardialing project](/posts/wardialing-finnish-freephones/) has the functionality to send SMS messages and to make calls on the PSTN network. Thus, compromising it would grant a hacker not only the possibility to send smishing messages, but also to make (scam) calls. The device also did not come across as too secure by default so the time investment into hacking one might be small. A device that powerful and easily hackable would be an ideal target for the SMS messaging service operators. 
+The relatively cheap GoIP-1 GSM gateway device I bought specifically for [my wardialing project]({{< relref "wardialing-finnish-freephones" >}}) has the functionality to send SMS messages and to make calls on the PSTN network. Thus, compromising it would grant a hacker not only the possibility to send smishing messages, but also to make (scam) calls. The device also did not come across as too secure by default so the time investment into hacking one might be small. A device that powerful and easily hackable would be an ideal target for the SMS messaging service operators.
 
-Intrigued by the business prospect we chose to investigate the device in our “hack weekend” with my good friend and colleague [Lassi Korhonen](https://www.linkedin.com/in/lassi-korhonen-b50510127/). After a weekend of sitting in a dark apartment hacking and occasionally walking to the nearest fast food joint, we uncovered multiple vulnerabilities on the device, some of which enable compromising such devices for the purpose of sending SMS messages or making calls for free. 
+Intrigued by the business prospect we chose to investigate the device in our “hack weekend” with my good friend and colleague [Lassi Korhonen](https://www.linkedin.com/in/lassi-korhonen-b50510127/). After a weekend of sitting in a dark apartment hacking and occasionally walking to the nearest fast food joint, we uncovered multiple vulnerabilities on the device, some of which enable compromising such devices for the purpose of sending SMS messages or making calls for free.
 
 {{< figure src="/images/hacking-voip-gsm-gateway-in-the-dark.jpeg" alt="Laptop and GSM gateway in a dark apartment" caption="Sitting in the dark apartment hacking" >}}
 
 ## A word about “hack weekends”
 
-Hack weekends are something we started having together with Lassi once we had worked on the security field for some time. The idea is that we choose some target that interests us both and work on it under the same roof over a weekend fueled by pizza and sushi. 
+Hack weekends are something we started having together with Lassi once we had worked on the security field for some time. The idea is that we choose some target that interests us both and work on it under the same roof over a weekend fueled by pizza and sushi.
 
 During these weekends we catch up on life and learn from each other while having fun hacking. It doesn't have to be hacking though, we may also focus on developing a proof-of-concept (PoC) of something. Sometimes we find something, sometimes we don't, but we always learn something new. I warmly recommend this format of entertainment for those that are fortunate enough to share a nerdy interest with their friend.
 
@@ -32,7 +26,7 @@ During these weekends we catch up on life and learn from each other while having
 
 ## Past findings
 
-There have been multiple vulnerabilities discovered in GoIP devices in the past. 
+There have been multiple vulnerabilities discovered in GoIP devices in the past.
 
 In early 2017, Trustwave [found a secret backdoor telnet account](https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/undocumented-backdoor-account-in-dbltek-goip/), 'dbladm', that granted root shell on the device. This account was protected with a custom challenge-response algorithm which in turn relied on obscurity for security. Thus anyone could log in. In our testing, the account seemed to still exist, but the challenge-response algorithm had been changed. Trustwave had reverse-engineered the algorithm from an upgrade package, but based on our research it was no longer part of the newer upgrade packages. Perhaps it could have been extracted from the device with special tooling? We, however, lacked the tools.
 
@@ -42,7 +36,7 @@ Aside from concrete vulnerabilities, GoIP devices are ridden with weak default c
 
 ## Our findings
 
-The firmware version of the GoIP-1 device was GHSFVT-1.1-67-5 M26FBR03A02 RSIM. Before testing, the device was reset to the default configuration, and a static IP was set to the LAN interface. 
+The firmware version of the GoIP-1 device was GHSFVT-1.1-67-5 M26FBR03A02 RSIM. Before testing, the device was reset to the default configuration, and a static IP was set to the LAN interface.
 
 The IP address of the device on 'PC' port was 192.168.8.1 and on 'LAN' port 192.168.9.1. The PoCs, therefore, point to these IP addresses. Based on our analysis, all of the vulnerabilities were present in both interfaces of the device.
 
@@ -80,11 +74,11 @@ The TCP port 2096 on the device is a debug port that allows the eavesdropping of
 
 The port leaks for example:
 
-* The phone number associated with the device
-* Which phone number the device is calling
-* Which phone number calls this device
-* The content of SMS messages sent
-* The content of all received SMS messages when admin browses to that view in the web panel
+- The phone number associated with the device
+- Which phone number the device is calling
+- Which phone number calls this device
+- The content of SMS messages sent
+- The content of all received SMS messages when admin browses to that view in the web panel
 
 The following screenshot shows messages received from the port. Among the messages, it is visible that an SMS message with the content “Hello world!” is sent to a redacted phone number, and that a 5-second test call is made to a redacted phone number.
 
@@ -118,30 +112,30 @@ There were systematic reflected Cross-site scripting (XSS) vulnerabilities in th
 
 The following paths contain parameters vulnerable to reflected cross-site scripting. It is possible to provide input that is reflected without sanitization and thus cause Javascript to be executed in the context of the application. The input is however reflected only once and is not saved anywhere. The vulnerable parameters in each path shown in the table below.
 
-|Path|Vulnerable parameter|
-|:-|-:|
-|/default/en_US/tools.html|type|
-|/default/en_US/tools.html|addr|
-|/default/en_US/config.html|line1_gsm_imei|
-|/default/en_US/config.html|type|
-|/default/en_US/ussd_info.html|type|
-|/default/en_US/status.html|type|
-|/default/en US/sms_info.html|smskey|
-|/default/en US/sms_info.html|telnum|
-|/default/en US/sms_info.html|smscontent|
+| Path                          | Vulnerable parameter |
+| :---------------------------- | -------------------: |
+| /default/en_US/tools.html     |                 type |
+| /default/en_US/tools.html     |                 addr |
+| /default/en_US/config.html    |       line1_gsm_imei |
+| /default/en_US/config.html    |                 type |
+| /default/en_US/ussd_info.html |                 type |
+| /default/en_US/status.html    |                 type |
+| /default/en US/sms_info.html  |               smskey |
+| /default/en US/sms_info.html  |               telnum |
+| /default/en US/sms_info.html  |           smscontent |
 
 #### Stored XSS
 
 The following paths contain parameters vulnerable to stored cross-site scripting. It is possible to provide input that is reflected back without sanitization and thus cause Javascript to be executed in the context of the application. The input is stored by the web panel and reflected to the user every time they visit a certain view until the user deletes or overwrites the malicious input. The vulnerable parameters in each path shown in the table below.
 
-|Path|Vulnerable parameter|
-|:-|-:|
-|/default/en US/config.html|l1_gsm_oper_type|
-|/default/en US/config.html|l1_gsm_bst|
-|/default/en US/config.html|sms_mode|
-|/default/en US/config.html|rtp_port_lower|
-|/default/en US/config.html|lang|
-|/default/en US/config.html|time_zone|
+| Path                       | Vulnerable parameter |
+| :------------------------- | -------------------: |
+| /default/en US/config.html |     l1_gsm_oper_type |
+| /default/en US/config.html |           l1_gsm_bst |
+| /default/en US/config.html |             sms_mode |
+| /default/en US/config.html |       rtp_port_lower |
+| /default/en US/config.html |                 lang |
+| /default/en US/config.html |            time_zone |
 
 ### Denial of Service
 
@@ -174,6 +168,6 @@ We strongly recommend against allowing traffic to any port on this device from t
 
 These vulnerabilities were reported to the device manufacturer [Dbltek](http://en.dbltek.com/) on 7th November 2021, and the findings were acknowledged. Dbltek was given over 90 days to fix the findings, as well as support for the fixes.
 
-Dbltek has not released a new version of the GoIP-1 firmware after the report. However, looking at the [firmware releases page](http://en.dbltek.com/latestfirmwares.html), we see that the one we tested was not the latest and greatest.  We did not verify whether the vulnerabilities exist in the newest firmware
+Dbltek has not released a new version of the GoIP-1 firmware after the report. However, looking at the [firmware releases page](http://en.dbltek.com/latestfirmwares.html), we see that the one we tested was not the latest and greatest. We did not verify whether the vulnerabilities exist in the newest firmware
 
 The device does not have automatic updates, and the update process is not completely straightforward. Thus, it is likely that vulnerable devices are still being sold, and that all devices are not going to be updated. We chose to disclose these details nevertheless to urge the implementation of automatic updates or at least an easier update process. Our findings with the biggest impact also have a limited window of exploitation and thus will not likely put a large number of the devices into immediate danger. By disclosing we also hope to educate potential buyers of the device about the dangers associated with the devices.

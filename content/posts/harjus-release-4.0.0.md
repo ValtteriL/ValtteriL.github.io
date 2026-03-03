@@ -15,7 +15,7 @@ categories: [
 draft: false
 ---
 
-After releasing the triangular arbitrage trading bot [Harjus](https://github.com/ValtteriL/harjus) under MIT license and publishing [a write-up on my journey](../binance-triangular-arbitrage) last year, I took a brief stint of working on other stuff.
+After releasing the triangular arbitrage trading bot [Harjus](https://github.com/ValtteriL/harjus) under MIT license and publishing [a write-up on my journey]({{< relref "binance-triangular-arbitrage" >}}) last year, I took a brief stint of working on other stuff.
 However, I was constantly feeling that I had given up too early, when there were still major optimizations that could be enough to turn a profit.
 
 My previous write-up had caught the eye of multiple aspirational arbitrageurs who, to my pleasure, contacted me in search of advice.
@@ -109,7 +109,7 @@ As an EU citizen, I am unable to trade the de facto casino chip (USDT) on Binanc
 USDT has the highest trading volume globally, and trading it leaves out a lot of opportunities.
 
 While I was busy with the v4, [Binance also removed TRY](https://www.binance.com/en/square/post/10-30-2025-binance-to-implement-changes-for-turkish-lira-trading-pairs-31714427466017) (Turkish Lira) from Binance.com.
-TRY [contained](../binance-triangular-arbitrage#results-2) the most arbitrage opportunities in 2025 after BTC and USDC.
+TRY [contained]({{< relref "binance-triangular-arbitrage#results-2" >}}) the most arbitrage opportunities in 2025 after BTC and USDC.
 This means I have even fewer arbitrage opportunities to exploit.
 
 The number of opportunities varies daily, and I might have gotten unlucky, too.
@@ -117,7 +117,7 @@ The competition may also have gotten better.
 
 ### How can someone be faster?
 
-I identified possible reasons [already before](../binance-triangular-arbitrage#why-is-it-not-profitable), namely, using bare metal servers, magic AWS network optimizations, or knowledge of exploitable quirks in Binance.
+I identified possible reasons [already before]({{< relref "binance-triangular-arbitrage#why-is-it-not-profitable" >}}), namely, using bare metal servers, magic AWS network optimizations, or knowledge of exploitable quirks in Binance.
 
 Thanks to my shoestring budget, I deploy Harjus on a virtual machine where I pay the overhead tax and suffer unpredictability caused by noisy neighbours.
 Deploying on bare metal would offer higher and more predictable performance.

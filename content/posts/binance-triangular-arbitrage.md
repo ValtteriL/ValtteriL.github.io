@@ -11,7 +11,7 @@ draft: false
 {{< figure src="/images/binance-triangular-arbitrage/harjus-logo.png" alt="Harjus logo" >}}
 
 {{< note >}}
-Read also [the writeup on latest Harjus release](../harjus-release-4.0.0).
+Read also [the writeup on latest Harjus release]({{< relref "harjus-release-4.0.0" >}}).
 {{< /note >}}
 
 The idea of turning on a program and just letting it rip while collecting (riskless) money is compelling.
