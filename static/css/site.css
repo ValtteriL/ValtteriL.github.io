@@ -153,3 +153,42 @@ tbody tr:nth-child(even) {
 tbody tr:hover {
     background-color: #eef2f7;
 }
+
+/* Alerts */
+.alert {
+    padding: 0.8rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.4rem;
+    border-left: 4px solid;
+}
+
+.alert-note {
+    background-color: #ddf4ff;
+    border-left-color: #218bff;
+}
+
+.alert-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    margin: 0 0 0.4rem 0;
+    font-size: 0.9rem;
+}
+
+.alert-note .alert-title {
+    color: #0969da;
+}
+
+.alert-note .alert-title svg {
+    color: #0969da;
+}
+
+.alert-content {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.alert-content p {
+    margin: 0;
+}
