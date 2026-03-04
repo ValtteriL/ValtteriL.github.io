@@ -117,7 +117,7 @@ The competition may also have gotten better.
 
 ### How can someone be faster?
 
-I identified possible reasons [already before]({{< relref "binance-triangular-arbitrage#why-is-it-not-profitable" >}}), namely, using bare metal servers, magic AWS network optimizations, or knowledge of exploitable quirks in Binance.
+I identified possible reasons [already before]({{< relref "binance-triangular-arbitrage#why-is-it-not-profitable" >}}), namely, having higher Binance VIP tier, using bare metal servers, magic AWS network optimizations, or knowledge of exploitable quirks in Binance.
 
 Thanks to my shoestring budget, I deploy Harjus on a virtual machine where I pay the overhead tax and suffer unpredictability caused by noisy neighbours.
 Deploying on bare metal would offer higher and more predictable performance.
