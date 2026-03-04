@@ -3,19 +3,16 @@ title: "Harjus: Triangular Arbitrage Bot for Binance"
 subtitle: "My journey chasing riskless profits in the world’s most liquid crypto exchange at high speed with a grayling"
 date: 2025-07-21T09:14:28+03:00
 description: "My journey chasing riskless profits in the world’s most liquid crypto exchange at high speed with a grayling"
-tags: [
-    "binance",
-    "trading",
-    "hft",
-    "arbitrage"
-]
-categories: [
-    "Trading",
-]
+tags: ["binance", "trading", "hft", "arbitrage"]
+categories: ["Trading"]
 draft: false
 ---
 
 {{< figure src="/images/binance-triangular-arbitrage/harjus-logo.png" alt="Harjus logo" >}}
+
+{{< note >}}
+Read also [the writeup on latest Harjus release]({{< relref "harjus-release-4.0.0" >}}).
+{{< /note >}}
 
 The idea of turning on a program and just letting it rip while collecting (riskless) money is compelling.
 No sales or marketing, or other things I, as an engineer, like to shy away from doing - just enjoyable tinkering with models and infra.
