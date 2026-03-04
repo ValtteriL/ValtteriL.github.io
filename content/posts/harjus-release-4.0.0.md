@@ -122,7 +122,7 @@ I identified possible reasons [already before]({{< relref "binance-triangular-ar
 Thanks to my shoestring budget, I deploy Harjus on a virtual machine where I pay the overhead tax and suffer unpredictability caused by noisy neighbours.
 Deploying on bare metal would offer higher and more predictable performance.
 I'm deploying on a c6in.xlarge instance, which costs $0.2856 per hour on-demand.
-Someone [more serious](https://github.com/janestreet/magic-trace/wiki/Supported-platforms,-programming-languages,-and-runtimes#supported-virtualization-environments) outside the EU could choose, for instance, c6i.metal, paying $6.848 per hour on-demand and still clear a profit.
+[Someone](https://github.com/janestreet/magic-trace/wiki/Supported-platforms,-programming-languages,-and-runtimes#supported-virtualization-environments) more serious outside the EU could choose, for instance, c6i.metal, paying $6.848 per hour on-demand and still clear a profit.
 
 As a brand new reason, Binance introduced the [Simple Binary Encoding (SBE)](https://developers.binance.com/docs/binance-spot-api-docs/fix-api#fix-sbe) in its FIX API.
 SBE is far superior to the standard FIX encoding when it comes to latency.
